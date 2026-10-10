@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SBAerospace | South Brunswick High School Aerospace</title>
-  <meta name="description" content="SBAerospace is South Brunswick High School's student-run aerospace engineering team. We design, build, and launch rockets, and build the electronics and software that fly them." />
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description"
+    content="SBAerospace is South Brunswick High School's student-run aerospace engineering team. We design, build, and launch rockets, and build the electronics and software that fly them." />
+  <link rel="stylesheet" href="style.css?v=2.2" />
   <script src="main.js" defer></script>
 </head>
+
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -30,16 +33,22 @@
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
           <!-- Moon: shown in light mode -->
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
           <!-- Sun: shown in dark mode -->
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         </button>
 
@@ -69,24 +78,28 @@
       <div class="hero-interactive-scene" aria-hidden="true">
         <div class="interactive-rocket" id="heroRocket">
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 15C50 15 38 32 38 55C38 65 41 72 41 72L50 78L59 72C59 72 62 65 62 55C62 32 50 15 50 15Z" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
-            <path d="M38 60L26 75C26 75 25 78 28 78H38" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M62 60L74 75C74 75 75 78 72 78H62" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M46 78L48 83H52L54 78" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
-            <circle cx="50" cy="42" r="4" stroke="var(--accent)" stroke-width="2"/>
-            <path class="rocket-flame" d="M50 85V95M47 84V90M53 84V90" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M50 15C50 15 38 32 38 55C38 65 41 72 41 72L50 78L59 72C59 72 62 65 62 55C62 32 50 15 50 15Z"
+              stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" />
+            <path d="M38 60L26 75C26 75 25 78 28 78H38" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M62 60L74 75C74 75 75 78 72 78H62" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M46 78L48 83H52L54 78" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" />
+            <circle cx="50" cy="42" r="4" stroke="var(--accent)" stroke-width="2" />
+            <path class="rocket-flame" d="M50 85V95M47 84V90M53 84V90" stroke="var(--accent)" stroke-width="1.5"
+              stroke-linecap="round" />
           </svg>
         </div>
       </div>
       <div class="hero-inner container">
         <div class="hero-text-wrap">
-          <div class="hero-label">South Brunswick High School · Est. 2023</div>
           <h1 class="hero-title">
             We build rockets.<br />
             <em>From scratch.</em>
           </h1>
           <p class="hero-sub">
-            SBAerospace is a student-run engineering club at SBHS. We compete in the American Rocketry Challenge and build everything ourselves: airframes, electronics, software, and all.
+            SBAerospace is a student-run engineering club at SBHS. We compete in the American Rocketry Challenge and
+            build everything ourselves: airframes, electronics, software, and all.
           </p>
           <div class="hero-btns">
             <a href="projects.html" class="btn btn-primary">See Our Work</a>
@@ -94,9 +107,39 @@
           </div>
         </div>
         <div class="hero-image-wrap reveal reveal-delay-1">
-          <div class="hero-single-frame">
-            <img src="assets/team/2025-nationals.jpeg" alt="South Brunswick Aerospace Team at the American Rocketry Challenge National Finals" />
-            <div class="hero-image-caption">SBAerospace Team at the ARC National Finals</div>
+          <div class="hero-slideshow" id="heroSlideshow" aria-label="SBAerospace competition highlights">
+            <div class="hero-slides-viewport">
+              <div class="hero-slide active" data-title="Nasa TechRise Winners" data-meta="SBHS">
+                <img src="assets/team/2026-techrise.webp"
+                  alt="SBAerospace team holding NASA TechRise award" />
+              </div>
+              <div class="hero-slide" data-title="SBAerospace Team at the ARC National Finals" data-meta="The Plains, VA">
+                <img src="assets/team/2025-nationals.jpeg"
+                  alt="SBAerospace team at the American Rocketry Challenge National Finals" />
+              </div>
+            </div>
+
+            <div class="hero-slideshow-controls">
+              <button class="hero-slide-btn" id="heroSlidePrev" aria-label="Previous image">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <div class="hero-slide-dots" id="heroSlideDots">
+                <button class="hero-slide-dot active" data-index="0" aria-label="Slide 1"></button>
+                <button class="hero-slide-dot" data-index="1" aria-label="Slide 2"></button>
+              </div>
+              <button class="hero-slide-btn" id="heroSlideNext" aria-label="Next image">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="hero-image-caption">
+              <span id="heroCaptionTitle">Nasa TechRise Winners</span>
+              <span id="heroCaptionMeta" style="color: var(--accent); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">SBHS</span>
+            </div>
           </div>
         </div>
       </div>
@@ -106,30 +149,60 @@
     <section class="section">
       <div class="container">
         <div class="section-header center reveal">
-          <div class="section-label">What We Do</div>
           <h2 class="section-title">Built entirely by students.</h2>
           <p class="section-sub">
-            Every part of the rocket (and everything inside it) is designed, built, and flown by SBHS students. No kits.
+            Every part of our hardware and software is designed, assembled, and tested by SBHS students.
           </p>
         </div>
-        <div class="cards-grid">
-          <div class="card reveal">
-            <div class="card-num-header">01 // Rocketry</div>
+        <div class="disciplines-grid">
+          <!-- Rocketry -->
+          <div class="discipline-card reveal">
+            <div class="discipline-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5L16.5 6.5c1.5-1.5 1.5-3.5 1.5-3.5s-2 0-3.5 1.5L4.5 16.5z"/>
+                <path d="M12 9l3 3"/><path d="M9 12l3 3"/><path d="M3 21l3-3"/>
+              </svg>
+            </div>
             <h3>Rocketry</h3>
-            <p>We design custom airframes and fin geometries, utilizing OpenRocket simulations to verify stability margins and predict flight paths before manufacturing.</p>
+            <p>We design custom airframes and fin geometries, utilizing flight simulations to verify stability margins and predict flight paths before manufacturing.</p>
           </div>
-          <div class="card reveal reveal-delay-1">
-            <div class="card-num-header">02 // Electronics</div>
+
+          <!-- Electronics -->
+          <div class="discipline-card reveal reveal-delay-1">
+            <div class="discipline-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="4" width="16" height="16" rx="2" ry="2"/>
+                <rect x="9" y="9" width="6" height="6"/>
+                <line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/>
+                <line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/>
+                <line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="15" x2="23" y2="15"/>
+                <line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="15" x2="4" y2="15"/>
+              </svg>
+            </div>
             <h3>Electronics</h3>
-            <p>Custom PCBs, avionics, and the Rocket++ flight computer, designed in KiCad and programmed in C. We build the hardware that goes inside the rocket.</p>
+            <p>Custom PCBs, avionics, and the Rocket++ flight computer, designed in KiCad and programmed in C. We build the hardware that goes inside our vehicles and payloads.</p>
           </div>
-          <div class="card reveal reveal-delay-2">
-            <div class="card-num-header">03 // Mechanical</div>
+
+          <!-- Mechanical -->
+          <div class="discipline-card reveal reveal-delay-2">
+            <div class="discipline-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
             <h3>Mechanical</h3>
-            <p>CAD-driven design in SolidWorks and Fusion 360. FEA on critical structures, composite layups, and 3D printed hardware: everything starts with a drawing.</p>
+            <p>CAD-driven design in SolidWorks and Fusion 360. Structural stress evaluation, composite layups, and 3D printed hardware: everything starts with a drawing.</p>
           </div>
-          <div class="card reveal reveal-delay-3">
-            <div class="card-num-header">04 // Software</div>
+
+          <!-- Software -->
+          <div class="discipline-card reveal reveal-delay-3">
+            <div class="discipline-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
             <h3>Software</h3>
             <p>Flight simulations, ground station GUIs, and tools like CircuitSpace, an open-source circuit simulator our electronics team built and uses in-house.</p>
           </div>
@@ -137,85 +210,75 @@
       </div>
     </section>
 
-    <!-- HIGHLIGHTED PROJECTS -->
-    <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <!-- FLAGSHIP HARDWARE SYSTEMS -->
+    <section class="section"
+      style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-label">Recent Work</div>
-          <h2 class="section-title">Some of what we've built</h2>
+          <h2 class="section-title">Engineered from the ground up</h2>
+          <p class="section-sub">Major hardware systems and competition vehicles designed, machined, and flown by our team.</p>
         </div>
-        <div class="cards-grid">
-          <div class="card reveal" style="border-left: 3px solid var(--accent);">
-            <div class="card-num-header">System // 01</div>
-            <h3>Active Airbrake System</h3>
-            <p>Servo-driven airbrakes that autonomously deploy mid-flight to hit a target apogee. PID control loop, Kalman filter, and a custom PCB, all designed in-house.</p>
+        <div class="flagship-grid">
+          <!-- Active Airbrake System -->
+          <div class="flagship-card reveal">
+            <div class="flagship-img-wrap">
+              <img src="assets/showcase/Airbrakes.png" alt="Active airbrake 3D CAD design" />
+            </div>
+            <div class="flagship-body">
+              <h3>Active Airbrake System</h3>
+              <p>Three servo-actuated flaps that autonomously deploy mid-flight to bleed velocity and hit a precise target apogee. Runs an active PID control loop with Kalman-filtered telemetry.</p>
+            </div>
           </div>
-          <div class="card reveal reveal-delay-1" style="border-left: 3px solid var(--accent);">
-            <div class="card-num-header">Avionics // 02</div>
-            <h3>Rocket++</h3>
-            <p>Our custom flight computer. Handles dual-deploy ejection charge firing, flight state detection, and telemetry logging to onboard flash memory.</p>
+
+          <!-- Rocket++ Flight Computer -->
+          <div class="flagship-card reveal reveal-delay-1">
+            <div class="flagship-img-wrap">
+              <img src="assets/showcase/Rocket++.png" alt="Rocket++ custom flight computer PCB" />
+            </div>
+            <div class="flagship-body">
+              <h3>Rocket++ Flight Computer</h3>
+              <p>Our custom 54mm flight computer built in KiCad and programmed in bare-metal C. Handles state-machine flight detection, dual-deploy pyro ejection, and high-frequency flash logging.</p>
+            </div>
           </div>
-          <div class="card reveal reveal-delay-2" style="border-left: 3px solid var(--accent);">
-            <div class="card-num-header">Competition // 03</div>
-            <h3>American Rocketry Challenge</h3>
-            <p>We compete in ARC, one of the biggest student rocketry competitions in the country. Our rocket has to hit a target altitude and duration with a raw egg payload onboard.</p>
+
+          <!-- ARC Competition Vehicle -->
+          <div class="flagship-card reveal reveal-delay-2">
+            <div class="flagship-img-wrap">
+              <img src="assets/showcase/Rocket.jpeg" alt="High power rocket on launch pad" />
+            </div>
+            <div class="flagship-body">
+              <h3>American Rocketry Challenge</h3>
+              <p>Engineered and flown at the National Finals in The Plains, VA. Custom composite airframe designed to hit strict altitude and duration scoring windows with fragile raw egg payloads.</p>
+            </div>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 2.5rem;" class="reveal">
-          <a href="projects.html" class="btn btn-dark">All Projects →</a>
+        <div style="text-align: center; margin-top: 2.75rem;" class="reveal">
+          <a href="projects.html" class="btn btn-outline">Explore All Research & Projects (6 Systems) →</a>
         </div>
       </div>
     </section>
 
-    <!-- BUILD GALLERY -->
+    <!-- COMPETITIVE TEAMS OVERVIEW -->
     <section class="section">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-label">Gallery</div>
-          <h2 class="section-title">Engineering in focus</h2>
-          <p class="section-sub">Real hardware, simulations, and field tests from our development cycles.</p>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item reveal">
-            <img src="assets/showcase/Rocket.jpeg" alt="High-power rocket launch day" />
-            <div class="gallery-caption">
-              <h4>TRA Launch Site</h4>
-              <p>Testing airframes and recovery systems on field days.</p>
-            </div>
-          </div>
-          <div class="gallery-item reveal reveal-delay-1">
-            <img src="assets/showcase/Airbrakes.png" alt="Servo-driven airbrake CAD design" />
-            <div class="gallery-caption">
-              <h4>Active Airbrakes</h4>
-              <p>3D CAD simulation of active apogee tuning flaps.</p>
-            </div>
-          </div>
-          <div class="gallery-item reveal reveal-delay-2">
-            <img src="assets/showcase/CircuitSpace.png" alt="Avionics PCB design layout" />
-            <div class="gallery-caption">
-              <h4>Avionics Software</h4>
-              <p>Custom telemetry and simulations developed in-house.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAMS PREVIEW -->
-    <section class="section">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div class="teams-preview-grid">
           <div class="reveal">
-            <div class="section-label">Our Team</div>
-            <h2 class="section-title">Four teams,<br /><em>one rocket.</em></h2>
-            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.5rem;">
-              Every part of what we build is owned by a dedicated sub-team: Rocketry, Electronics, Mechanical, and Software. They each have their own focus, but everything has to integrate.
+            <h2 class="section-title">Multiple competitions.<br /><em>One unified club.</em></h2>
+            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.25rem;">
+              SBAerospace isn't limited to a single vehicle or project. We field competitive teams across national aerospace challenges: from the American Rocketry Challenge (with dedicated physics, simulation, and engineering subteams) to NASA TechRise, Cubes in Space, Genes in Space, and the Drone Challenge.
             </p>
-            <a href="teams.html" class="btn btn-primary">Meet the Team →</a>
+            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 2rem;">
+              Members develop specialized skills across CAD, electronics, computational simulation, aerodynamics, and aerospace biology - collaborating across programs all year long.
+            </p>
+            <a href="teams.html" class="btn btn-primary">Meet Our Teams →</a>
           </div>
           <div class="reveal reveal-delay-1">
-            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;">
-              <img src="assets/showcase/Rocket.jpeg" alt="SBAerospace rocket on a launch pad" style="width: 100%; height: 300px; object-fit: cover;" />
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 16px 36px -12px rgba(0,0,0,0.4);">
+              <img src="assets/team/2024-nationals.jpeg" alt="SBAerospace members competing at national competition"
+                style="width: 100%; height: 320px; object-fit: cover; display: block;" />
+              <div style="padding: 1rem 1.25rem; background: var(--surface); border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-2); font-weight: 600;">
+                SBAerospace members competing at national events
+              </div>
             </div>
           </div>
         </div>
@@ -227,10 +290,12 @@
       <div class="container">
         <div class="cta-banner reveal">
           <h2>Want to get involved?</h2>
-          <p>We're always looking for SBHS students who want to actually build things. No experience required, just show up.</p>
+          <p>We're always looking for SBHS students who want to actually build things. No experience required, just show
+            up.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="contact.html" class="btn btn-primary">Join the Club</a>
-            <a href="sponsor.html" class="btn" style="background: rgba(255,255,255,0.12); color: inherit;">Sponsor Us</a>
+            <a href="sponsor.html" class="btn" style="background: rgba(255,255,255,0.12); color: inherit;">Sponsor
+              Us</a>
           </div>
         </div>
       </div>
@@ -251,14 +316,18 @@
         <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
+        <a href="tryouts.html">Tryouts</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:sbhsaerospace@gmail.com">Email</a>
-        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank"
+          rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/SBAerospace" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank"
+          rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -268,4 +337,5 @@
   </footer>
 
 </body>
+
 </html>

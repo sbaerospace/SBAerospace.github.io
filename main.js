@@ -22,8 +22,8 @@ function applyTheme(theme) {
   banner.className = 'announce-banner';
   banner.id = 'announceBanner';
   banner.innerHTML = `
-    <span>Tryouts for 2026-27 are open: fill out the form and join our Google Classroom.</span>
-    <a href="tryouts.html">Learn more →</a>
+    <span>Fall Tryouts (Round 2) & General Membership info for 2026-27 are live!</span>
+    <a href="tryouts.html">View details →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
   // Insert before header (first element of body)
@@ -376,4 +376,73 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  // ─── HERO SLIDESHOW ────────────────────────────────────────
+  const heroSlideshow = document.getElementById('heroSlideshow');
+  if (heroSlideshow) {
+    const slides = heroSlideshow.querySelectorAll('.hero-slide');
+    const dots = heroSlideshow.querySelectorAll('.hero-slide-dot');
+    const prevBtn = document.getElementById('heroSlidePrev');
+    const nextBtn = document.getElementById('heroSlideNext');
+    const captionTitle = document.getElementById('heroCaptionTitle');
+    const captionMeta = document.getElementById('heroCaptionMeta');
+    let currentIndex = 0;
+    let autoPlayTimer = null;
+
+    function showSlide(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+
+      const activeSlide = slides[currentIndex];
+      if (activeSlide && captionTitle && captionMeta) {
+        captionTitle.textContent = activeSlide.getAttribute('data-title') || '';
+        captionMeta.textContent = activeSlide.getAttribute('data-meta') || '';
+      }
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayTimer = setInterval(() => {
+        showSlide(currentIndex + 1);
+      }, 5000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayTimer) clearInterval(autoPlayTimer);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        showSlide(currentIndex - 1);
+        startAutoPlay();
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        showSlide(currentIndex + 1);
+        startAutoPlay();
+      });
+    }
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index'), 10);
+        showSlide(idx);
+        startAutoPlay();
+      });
+    });
+
+    heroSlideshow.addEventListener('mouseenter', stopAutoPlay);
+    heroSlideshow.addEventListener('mouseleave', startAutoPlay);
+
+    startAutoPlay();
+  }
+
 });
+

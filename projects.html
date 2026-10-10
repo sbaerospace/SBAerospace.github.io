@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work | SBAerospace</title>
-  <meta name="description" content="Research, projects, and competition work from SBAerospace: South Brunswick High School's aerospace engineering team." />
-  <link rel="stylesheet" href="style.css" />
+  <title>Our Work | SBAerospace</title>
+  <meta name="description" content="Explore our rocketry projects, research, and competition history at SBAerospace." />
+  <link rel="stylesheet" href="style.css?v=2.2" />
   <script src="main.js" defer></script>
 </head>
+
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
 
@@ -28,17 +30,21 @@
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <!-- Moon: shown in light mode -->
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
           </svg>
-          <!-- Sun: shown in dark mode -->
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         </button>
 
@@ -50,7 +56,7 @@
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Work</a>
@@ -64,7 +70,6 @@
 
     <div class="page-header">
       <div class="container">
-        <div class="section-label">Our Work</div>
         <h1>Research. Projects. <em>Competition.</em></h1>
         <p>Everything we've built, studied, and flown: organized by category.</p>
       </div>
@@ -75,9 +80,12 @@
 
         <!-- TAB BAR -->
         <div class="tab-bar" role="tablist">
-          <button class="tab-btn active" data-tab="tab-projects" role="tab" aria-selected="true" id="tab-projects-btn">Projects</button>
-          <button class="tab-btn" data-tab="tab-research" role="tab" aria-selected="false" id="tab-research-btn">Research</button>
-          <button class="tab-btn" data-tab="tab-competition" role="tab" aria-selected="false" id="tab-competition-btn">Competition</button>
+          <button class="tab-btn active" data-tab="tab-projects" role="tab" aria-selected="true"
+            id="tab-projects-btn">Projects</button>
+          <button class="tab-btn" data-tab="tab-research" role="tab" aria-selected="false"
+            id="tab-research-btn">Research</button>
+          <button class="tab-btn" data-tab="tab-competition" role="tab" aria-selected="false"
+            id="tab-competition-btn">Competition</button>
         </div>
 
         <!-- ── PROJECTS ──────────────────────────────────── -->
@@ -89,27 +97,9 @@
                 <img src="assets/showcase/Airbrakes.png" alt="Active airbrake system on a rocket" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Mechanical</span>
-                  <span class="pill-tag">Electronics</span>
-                  <span class="pill-tag neutral">In Progress</span>
-                </div>
                 <h3>Active Airbrake System</h3>
-                <p>Three servo-actuated flaps that autonomously deploy mid-flight to bleed off speed and hit a precise target apogee. Runs a PID control loop with Kalman-filtered altitude data from our custom avionics.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Actuation</div>
-                    <div class="spec-val">Servo (9g)</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Control</div>
-                    <div class="spec-val">PID + Kalman</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">MCU</div>
-                    <div class="spec-val">STM32</div>
-                  </div>
-                </div>
+                <p>Three servo-actuated flaps that autonomously deploy mid-flight to bleed off speed and hit a precise
+                  target apogee. Runs a PID control loop with Kalman-filtered altitude data from our custom avionics.</p>
               </div>
             </div>
 
@@ -118,27 +108,9 @@
                 <img src="assets/showcase/Rocket++.png" alt="Rocket++ custom flight computer" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Electronics</span>
-                  <span class="pill-tag">Software</span>
-                  <span class="pill-tag neutral">Active</span>
-                </div>
                 <h3>Rocket++</h3>
-                <p>Our in-house flight computer. State machine-based flight detection, dual-deploy ejection charge firing, telemetry logging to onboard flash, and a custom PCB laid out in KiCad.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Form factor</div>
-                    <div class="spec-val">54mm sled</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">MCU</div>
-                    <div class="spec-val">RP2040</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">IMU</div>
-                    <div class="spec-val">BMI088</div>
-                  </div>
-                </div>
+                <p>Our in-house flight computer. State machine-based flight detection, dual-deploy ejection charge
+                  firing, telemetry logging to onboard flash, and a custom PCB laid out in KiCad.</p>
               </div>
             </div>
 
@@ -147,22 +119,9 @@
                 <img src="assets/showcase/CircuitSpace.png" alt="CircuitSpace web circuit simulator" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Software</span>
-                  <span class="pill-tag neutral">Open Source</span>
-                </div>
                 <h3>CircuitSpace</h3>
-                <p>A web-based circuit simulator built from scratch in JavaScript. Made so members can learn schematic design and simulate basic circuits without needing paid tools or local installs.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Stack</div>
-                    <div class="spec-val">Vanilla JS</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Status</div>
-                    <div class="spec-val">Live</div>
-                  </div>
-                </div>
+                <p>A web-based circuit simulator built from scratch in JavaScript. Made so members can learn schematic
+                  design and simulate basic circuits without needing paid tools or local installs.</p>
               </div>
             </div>
 
@@ -171,27 +130,10 @@
                 <img src="assets/showcase/Rocket.jpeg" alt="SBAerospace ARC 2025 rocket" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Rocketry</span>
-                  <span class="pill-tag">Mechanical</span>
-                  <span class="pill-tag neutral">In Progress</span>
-                </div>
                 <h3>ARC 2025 Competition Rocket</h3>
-                <p>Our American Rocketry Challenge build. G12 fiberglass airframe, dual-deploy recovery, and Rocket++ for avionics. We rely on OpenRocket simulations to model stability, test hypothetical wind conditions, and tune the flight profile to target exactly 800 ft.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Airframe</div>
-                    <div class="spec-val">G12 FG</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">ARC target</div>
-                    <div class="spec-val">800 ft</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Payload</div>
-                    <div class="spec-val">Raw egg</div>
-                  </div>
-                </div>
+                <p>Our American Rocketry Challenge build. G12 fiberglass airframe, dual-deploy recovery, and Rocket++
+                  for avionics. We rely on OpenRocket simulations to model stability, test hypothetical wind conditions,
+                  and tune the flight profile to target exactly 800 ft.</p>
               </div>
             </div>
 
@@ -203,74 +145,26 @@
           <div class="cards-grid">
 
             <div class="project-card reveal">
-              <div class="project-card-img">
-                <img src="assets/showcase/CFD.jpg" alt="CFD simulation of airbrake deployment" />
-              </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Aerodynamics</span>
-                  <span class="pill-tag neutral">Analysis</span>
-                </div>
                 <h3>Airbrake CFD Analysis</h3>
-                <p>Computational fluid dynamics study of our airbrake geometry at transonic speeds. Used OpenFOAM to characterize drag at various deployment angles and validated against RASAero simulations.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Tool</div>
-                    <div class="spec-val">OpenFOAM</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Regime</div>
-                    <div class="spec-val">Ma 0.3-0.7</div>
-                  </div>
-                </div>
+                <p>Computational fluid dynamics study of our airbrake geometry at transonic speeds. Used OpenFOAM to
+                  characterize drag at various deployment angles and validated against RASAero simulations.</p>
               </div>
             </div>
 
             <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img">
-                <img src="assets/showcase/flight_data_analysis.png" alt="Aerospace telemetry data visualization" />
-              </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Avionics</span>
-                  <span class="pill-tag neutral">Analysis</span>
-                </div>
                 <h3>Flight Data Post-Processing</h3>
-                <p>Python pipeline for pulling, cleaning, and visualizing flight data from Rocket++ logs. Reconstructs flight profiles, checks sensor agreement, and exports CSVs for simulation comparison.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Language</div>
-                    <div class="spec-val">Python</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Libraries</div>
-                    <div class="spec-val">Pandas, Plotly</div>
-                  </div>
-                </div>
+                <p>Python pipeline for pulling, cleaning, and visualizing flight data from Rocket++ logs. Reconstructs
+                  flight profiles, checks sensor agreement, and exports CSVs for simulation comparison.</p>
               </div>
             </div>
 
             <div class="project-card reveal reveal-delay-2">
-              <div class="project-card-img">
-                <img src="assets/showcase/fin_fea_study.png" alt="Finite element analysis visualization on a rocket fin" />
-              </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">Mechanical</span>
-                  <span class="pill-tag neutral">Structural</span>
-                </div>
                 <h3>Fin FEA Study</h3>
-                <p>Finite element analysis of our trapezoidal fin geometry under max-Q aerodynamic loading. Compared G10 fiberglass vs. carbon fiber layups to optimize stiffness-to-weight ratio.</p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Tool</div>
-                    <div class="spec-val">Fusion 360 FEA</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Materials</div>
-                    <div class="spec-val">G10, CFRP</div>
-                  </div>
-                </div>
+                <p>Finite element analysis of our trapezoidal fin geometry under max-Q aerodynamic loading. Compared G10
+                  fiberglass vs. carbon fiber layups to optimize stiffness-to-weight ratio.</p>
               </div>
             </div>
 
@@ -286,42 +180,23 @@
                 <img src="assets/showcase/Rocket.jpeg" alt="ARC competition rocket" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">ARC</span>
-                  <span class="pill-tag neutral">2025 Season</span>
-                </div>
                 <h3>American Rocketry Challenge 2025</h3>
                 <p>
-                  Our current ARC entry. The challenge: hit an 800 ft target altitude, land within a 40-45 second flight window, and bring back an unbroken raw egg. We're building a full custom rocket with in-house avionics to do it.
+                  Our current ARC entry. The challenge: hit an 800 ft target altitude, land within a 40-45 second
+                  flight window, and bring back an unbroken raw egg. We're building a full custom rocket with in-house
+                  avionics to do it.
                 </p>
-                <div class="project-specs-row">
-                  <div class="spec">
-                    <div class="spec-key">Target alt.</div>
-                    <div class="spec-val">800 ft</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Duration</div>
-                    <div class="spec-val">40-45 sec</div>
-                  </div>
-                  <div class="spec">
-                    <div class="spec-key">Payload</div>
-                    <div class="spec-val">Raw egg</div>
-                  </div>
-                </div>
               </div>
             </div>
 
             <div class="project-card reveal reveal-delay-1">
               <div class="project-card-img">
-                <img src="assets/showcase/arc_2024_launch.png" alt="SBAerospace model rocket launch in 2024" />
+                <img src="assets/team/2024-nationals.jpeg" alt="SBAerospace team at the ARC 2024 National Finals" />
               </div>
               <div class="project-card-body">
-                <div class="project-card-tags">
-                  <span class="pill-tag">ARC</span>
-                  <span class="pill-tag neutral">2024 Season</span>
-                </div>
                 <h3>American Rocketry Challenge 2024</h3>
-                <p>Our first ARC season. We built, flew, and competed, marking the beginning of a lot we're still learning from.</p>
+                <p>Our first ARC season. We built, flew, and competed, marking the beginning of a lot we're still
+                  learning from.</p>
               </div>
             </div>
 
@@ -337,7 +212,8 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <h3>SBAerospace</h3>
-        <p>South Brunswick High School's student-run aerospace engineering team. We design, build, and fly rockets, and everything inside them.</p>
+        <p>South Brunswick High School's student-run aerospace engineering team. We design, build, and fly rockets, and
+          everything inside them.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
@@ -346,21 +222,26 @@
         <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
+        <a href="tryouts.html">Tryouts</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="mailto:sbhsaerospace@gmail.com">Email Us</a>
-        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank"
+          rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/SBAerospace" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank"
+          rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© <span id="copy-year">2026</span> SBAerospace. South Brunswick, NJ.</span>
-      <a href="contact.html">sbhsaerospace@gmail.com</a>
+      <a href="mailto:sbhsaerospace@gmail.com">sbhsaerospace@gmail.com</a>
     </div>
   </footer>
 
 </body>
+
 </html>
