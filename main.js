@@ -292,10 +292,12 @@ document.addEventListener('DOMContentLoaded', function () {
         currentX += dx * 0.055;
         currentY += dy * 0.055;
 
-        let targetRotDeg = 0;
-        if (dist > 2 && isHovering) {
-          targetRotDeg = Math.atan2(dy, dx) * 180 / Math.PI + 90;
-        } else if (!isHovering) {
+        // While hovering, steer only when the rocket is still moving toward the cursor.
+        // Once it catches up, hold the last heading instead of snapping back upright.
+        let targetRotDeg = currentRot;
+        if (isHovering) {
+          if (dist > 6) targetRotDeg = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+        } else {
           targetRotDeg = Math.sin(idleTime) * 10;
         }
 
@@ -307,10 +309,9 @@ document.addEventListener('DOMContentLoaded', function () {
         rocket.style.opacity = rocketOpacity.toFixed(3);
 
         particleThrottle++;
+        // Keep the exhaust trail running even when the rocket is holding still
         if (particleThrottle >= 5) {
-          if (dist > 1.5 || scrollY > 5) {
-            spawnParticle(currentX, currentY, currentRot);
-          }
+          spawnParticle(currentX, currentY, currentRot);
           particleThrottle = 0;
         }
       } else {
