@@ -13,6 +13,23 @@ function applyTheme(theme) {
   applyTheme(saved || (prefersDark ? 'dark' : 'light'));
 })();
 
+// ─── SKY ──────────────────────────────────────────────────
+// --journey goes from 0 at the top of the page to 1 at the bottom; CSS uses it to fade night into dawn.
+(function initSky() {
+  let queued = false;
+  const update = () => {
+    const max = Math.max(1, root.scrollHeight - window.innerHeight);
+    root.style.setProperty('--journey', Math.min(1, Math.max(0, window.scrollY / max)).toFixed(3));
+    queued = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!queued) { queued = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
+
 // ─── ANNOUNCEMENT BANNER ──────────────────────────────────
 (function initBanner() {
   const BANNER_KEY = 'sba-banner-dismissed-2026-10';
@@ -22,8 +39,9 @@ function applyTheme(theme) {
   banner.className = 'announce-banner';
   banner.id = 'announceBanner';
   banner.innerHTML = `
+    <span class="announce-dot" aria-hidden="true"></span>
     <span>Next general meeting: Wednesday, Oct 21, 2:30 to 4:00 PM. All SBHS students are welcome.</span>
-    <a href="tryouts.html">Membership info →</a>
+    <a href="club.html#join">How to join →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
   // Insert before header (first element of body)
@@ -365,6 +383,44 @@ document.addEventListener('DOMContentLoaded', function () {
       
       timelineRocket.style.transform = `translateY(${translateY}px) translate(-50%, 0)`;
     }
+  }
+
+  // ─── HEADER TEAMS DROPDOWN ─────────────────────────────────
+  // Opens on hover/focus via CSS; the chevron button also toggles it for touch and keyboard users.
+  const teamsDropdown = document.getElementById('teamsDropdown');
+  if (teamsDropdown) {
+    const toggle = teamsDropdown.querySelector('.nav-dropdown-toggle');
+    const setOpen = (open) => {
+      teamsDropdown.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open);
+    };
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!teamsDropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => { if (!teamsDropdown.contains(e.target)) setOpen(false); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    teamsDropdown.querySelectorAll('.nav-dropdown-menu a').forEach(a => a.addEventListener('click', () => {
+      setOpen(false);
+      a.blur();
+    }));
+  }
+
+  // ─── TEAMS PAGE SECTIONS ───────────────────────────────────
+  // One team shows at a time; the URL hash (teams.html#techrise) picks which.
+  const teamPanels = [...document.querySelectorAll('.team-panel')];
+  if (teamPanels.length) {
+    const showTeam = (id, scroll) => {
+      if (!teamPanels.some(p => p.id === id)) id = teamPanels[0].id;
+      teamPanels.forEach(p => { p.hidden = p.id !== id; });
+      document.querySelectorAll('.nav-dropdown-menu a, .mobile-subnav a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === 'teams.html#' + id);
+      });
+      // The panel was hidden when the browser tried to jump to it, so scroll once it's visible
+      if (scroll) document.getElementById(id).scrollIntoView({ block: 'start' });
+    };
+    window.addEventListener('hashchange', () => showTeam(location.hash.slice(1), true));
+    showTeam(location.hash.slice(1), !!location.hash);
   }
 
   // ─── HERO SLIDESHOW ────────────────────────────────────────

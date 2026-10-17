@@ -37,7 +37,7 @@
       <image:loc>https://sbaerospace.vercel.app/assets/photos/ndvi-payload-prototype-1000.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2027-build-pad-370.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2027-build-pad-480.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://sbaerospace.vercel.app/assets/photos/airbrake-cfd-1234.webp</image:loc>
@@ -50,8 +50,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://sbaerospace.vercel.app/club.html</loc>
+    <lastmod>2026-10-17</lastmod>
+  </url>
+  <url>
     <loc>https://sbaerospace.vercel.app/teams.html</loc>
     <lastmod>2026-10-17</lastmod>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2025-finals-launch-1200.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://sbaerospace.vercel.app/sponsor.html</loc>
