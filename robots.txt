@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sbaerospace.github.io/sitemap.xml
+Sitemap: https://sbaerospace.vercel.app/sitemap.xml

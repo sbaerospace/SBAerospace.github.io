@@ -22,7 +22,7 @@ function applyTheme(theme) {
   banner.className = 'announce-banner';
   banner.id = 'announceBanner';
   banner.innerHTML = `
-    <span>Next general meeting: Wednesday, Oct 21, 2:30–4:00 PM. All SBHS students are welcome.</span>
+    <span>Next general meeting: Wednesday, Oct 21, 2:30 to 4:00 PM. All SBHS students are welcome.</span>
     <a href="tryouts.html">Membership info →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;

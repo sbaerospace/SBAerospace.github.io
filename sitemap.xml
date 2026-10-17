@@ -1,31 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://sbaerospace.github.io/</loc>
+    <loc>https://sbaerospace.vercel.app/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2025-finals-launch-1200.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2024-finals-launch-1000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2025-finals-team-861.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sbaerospace.vercel.app/about.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sbaerospace.vercel.app/projects.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/airbrake-cad-700.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/rocketplus-code-1000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/ndvi-payload-prototype-1000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2027-build-pad-370.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/airbrake-cfd-1234.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/circuitspace-1100.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sbaerospace.vercel.app/teams.html</loc>
     <lastmod>2026-10-17</lastmod>
   </url>
   <url>
-    <loc>https://sbaerospace.github.io/about.html</loc>
+    <loc>https://sbaerospace.vercel.app/sponsor.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2024-finals-launch-1000.webp</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sbaerospace.vercel.app/contact.html</loc>
     <lastmod>2026-10-17</lastmod>
   </url>
   <url>
-    <loc>https://sbaerospace.github.io/projects.html</loc>
-    <lastmod>2026-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://sbaerospace.github.io/teams.html</loc>
-    <lastmod>2026-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://sbaerospace.github.io/sponsor.html</loc>
-    <lastmod>2026-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://sbaerospace.github.io/contact.html</loc>
-    <lastmod>2026-10-17</lastmod>
-  </url>
-  <url>
-    <loc>https://sbaerospace.github.io/tryouts.html</loc>
+    <loc>https://sbaerospace.vercel.app/tryouts.html</loc>
     <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>
