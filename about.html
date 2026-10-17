@@ -4,11 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | SBAerospace</title>
-  <meta name="description"
-    content="Learn about SBAerospace, South Brunswick High School's student-run engineering club, our history, and our mission." />
-  <link rel="stylesheet" href="style.css?v=2.2" />
-  <script src="main.js" defer></script>
+  <title>About the SBHS Aerospace Club | South Brunswick High School</title>
+  <meta name="description" content="How the South Brunswick High School Aerospace Club in Monmouth Junction, NJ started, how meetings and mentoring work, and the club’s competition history." />
+  <link rel="canonical" href="https://sbaerospace.github.io/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SBHS Aerospace Club" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="About the SBHS Aerospace Club | South Brunswick High School" />
+  <meta property="og:description" content="How the South Brunswick High School Aerospace Club in Monmouth Junction, NJ started, how meetings and mentoring work, and the club’s competition history." />
+  <meta property="og:url" content="https://sbaerospace.github.io/about.html" />
+  <meta property="og:image" content="https://sbaerospace.github.io/assets/og/sbhs-aerospace-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SBHS Aerospace Club members behind the launch rail at the 2025 American Rocketry Challenge National Finals" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About the SBHS Aerospace Club | South Brunswick High School" />
+  <meta name="twitter:description" content="How the South Brunswick High School Aerospace Club in Monmouth Junction, NJ started, how meetings and mentoring work, and the club’s competition history." />
+  <meta name="twitter:image" content="https://sbaerospace.github.io/assets/og/sbhs-aerospace-og.jpg" />
+  <meta name="twitter:image:alt" content="SBHS Aerospace Club members behind the launch rail at the 2025 American Rocketry Challenge National Finals" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <link rel="stylesheet" href="style.css?v=2.4" />
+  <script src="main.js?v=2.4" defer></script>
 </head>
 
 <body>
@@ -17,8 +36,8 @@
   <header>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <img src="assets/logo/white-logo.png" alt="SBAerospace logo" />
-        SBAerospace
+        <img src="assets/logo/white-logo-64.png" alt="" width="32" height="32" />
+        SBHS Aerospace
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
@@ -49,8 +68,8 @@
           </svg>
         </button>
 
-        <a href="contact.html" class="btn-nav">Join Us</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <a href="tryouts.html" class="btn-nav">Join Us</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -64,55 +83,83 @@
     <a href="teams.html">Team</a>
     <a href="sponsor.html">Sponsor</a>
     <a href="contact.html">Contact</a>
-    <a href="tryouts.html" style="color: var(--accent);">Tryouts →</a>
+    <a href="tryouts.html" style="color: var(--accent);">Tryouts &amp; Membership</a>
   </nav>
 
   <main id="main">
 
     <div class="page-header">
       <div class="container">
-        <h1>Built by students.<br /><em>Launched by curiosity.</em></h1>
-        <p>We're a group of SBHS students who started this in 2023 because we wanted to actually build things, not just
-          learn about them in a classroom. So we did.</p>
+        <h1>About the SBHS Aerospace Club</h1>
+        <p>A student-run engineering club at South Brunswick High School in Monmouth Junction, New Jersey.</p>
       </div>
     </div>
 
-    <!-- ── MISSION ────────────────────────────────────────── -->
+    <!-- ── WHAT THE CLUB IS ───────────────────────────────── -->
     <section class="section">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;" class="reveal">
-          <div>
-            <h2 class="section-title">We're not just a rocket club.</h2>
-            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.25rem;">
-              SBAerospace was founded in 2023 by a small group of SBHS students who wanted to actually build things, not
-              just watch videos about them. We started with 10 people, a lot of ambition, and very little budget.
+        <div class="split-grid reveal">
+          <div class="prose">
+            <h2 class="section-title">What the club does</h2>
+            <p>
+              The South Brunswick High School Aerospace Club is where students work on real aerospace projects:
+              rockets, flight electronics, CAD models, code, and science experiments. Students started the club in
+              2023, and in fall 2026 the school approved it as an official SBHS club.
             </p>
-            <p style="color: var(--text-2); line-height: 1.7; margin-bottom: 1.25rem;">
-              The goal is simple: give SBHS students a real place to engineer. That means actual rocketry builds, custom
-              PCBs, hands-on CAD, and software that eventually ends up flying at 10,000 feet per second.
+            <p>
+              There are two ways to take part. General members come to monthly meetings, learn skills such as circuit
+              design, data analysis, and fabrication, and work on engineering challenges. Competitive members do the
+              same and also join a team for a specific competition, which takes significant time outside meetings.
             </p>
-            <p style="color: var(--text-2); line-height: 1.7;">
-              We compete in the American Rocketry Challenge and work on original projects year-round. Upperclassmen
-              teach freshmen, everyone learns something new every meeting, and at the end of the season we go to a field
-              and launch a rocket we built ourselves.
+            <p>
+              Club teams have entered the American Rocketry Challenge each season since 2024 and reached the National
+              Finals in 2024 and 2025. In 2026, our NASA TechRise team was named a Student Challenge winner.
             </p>
           </div>
-          <div>
-            <div
-              style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;">
-              <img src="assets/showcase/Rocket.jpeg" alt="SBAerospace team launching a rocket"
-                style="width: 100%; height: 320px; object-fit: cover;" />
-            </div>
+          <figure class="photo-figure">
+            <img src="assets/photos/techrise-2026-team-1200.webp"
+              srcset="assets/photos/techrise-2026-team-640.webp 640w, assets/photos/techrise-2026-team-1200.webp 1200w"
+              sizes="(max-width: 860px) 100vw, 570px" width="1200" height="900"
+              alt="SBHS Aerospace Club members standing in a school lab with their NASA TechRise Student Challenge certificate" />
+            <figcaption>Club members with the NASA TechRise Student Challenge certificate, 2026.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MENTORSHIP ─────────────────────────────────────── -->
+    <section class="section" style="background: var(--surface);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">How members learn</h2>
+          <p class="section-sub">No previous engineering experience is needed. Members learn from each other.</p>
+        </div>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+          <div class="card reveal">
+            <h3>Workshops at meetings</h3>
+            <p>Experienced members teach skills at general meetings, from CAD and simulation to circuits and code.</p>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <h3>Learning on a team</h3>
+            <p>New competitive members work next to students who built earlier rockets and payloads.</p>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <h3>Shared project files</h3>
+            <p>CAD files and code from past projects are kept on the club&rsquo;s <a href="https://github.com/SBAerospace" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">GitHub</a>, so new members can build on them.</p>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <h3>Student leaders and an advisor</h3>
+            <p>A student executive board runs the club with support from a club advisor. <a href="teams.html#leadership" style="color: var(--accent); text-decoration: underline;">See the leadership team</a>.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── TIMELINE ───────────────────────────────────────── -->
-    <section class="section" style="background: var(--surface);">
+    <!-- ── MILESTONES ─────────────────────────────────────── -->
+    <section class="section">
       <div class="container">
         <div class="section-header center reveal">
-          <h2 class="section-title">How we got here</h2>
+          <h2 class="section-title">Milestones</h2>
         </div>
         <div class="timeline reveal">
           <div class="timeline-rocket" id="timelineRocket" aria-hidden="true">
@@ -123,96 +170,28 @@
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2023</div>
-            <h4>Founded</h4>
-            <p>Ten students, zero budget, one goal: build a real rocket. We started meeting after school and figure
-              things out as we went.</p>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-date">2023-2024</div>
-            <h4>First builds & early flights</h4>
-            <p>First rocket builds, first launches. We got our hands on motors, built airframes, and started learning
-              what actually breaks during a flight and what doesn't.</p>
+            <h3 style="font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">Club started</h3>
+            <p>SBHS students began meeting to design and build rockets together.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2024</div>
-            <h4>Electronics & software sub-teams formed</h4>
-            <p>We formalized dedicated sub-teams. Rocket++ (our in-house flight computer) started development.
-              CircuitSpace was built and open-sourced on GitHub.</p>
+            <h3 style="font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">ARC National Finals</h3>
+            <p>A club team qualified for the American Rocketry Challenge National Finals in The Plains, Virginia.</p>
           </div>
           <div class="timeline-item">
             <div class="timeline-date">2025</div>
-            <h4>ARC competition season</h4>
-            <p>Competing in the American Rocketry Challenge for the first time with a full custom build: airbrake
-              system, Rocket++ avionics, and a lot of OpenRocket sims.</p>
+            <h3 style="font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">ARC National Finals again</h3>
+            <p>A club team returned to the National Finals.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── LEADERSHIP ─────────────────────────────────────── -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title">The people running it</h2>
-          <p class="section-sub">Student-run from top to bottom. These are the roles that keep things moving. Names will
-            be added here as they're filled.</p>
-        </div>
-        <div class="team-grid">
-          <div class="team-card reveal">
-            <div class="team-initials">ZS</div>
-            <h3>Zafir Shamsi</h3>
-            <div class="role-tag">President</div>
-            <p>Oversees all sub-teams, manages competition timelines, and keeps everything moving from first design to
-              launch day.</p>
+          <div class="timeline-item">
+            <div class="timeline-date">2026</div>
+            <h3 style="font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">NASA TechRise winner</h3>
+            <p>Our NDVI vegetation-mapping payload was selected as a NASA TechRise Student Challenge winner.</p>
           </div>
-          <div class="team-card reveal reveal-delay-1">
-            <div class="team-initials">SA</div>
-            <h3>Samuel Asefa</h3>
-            <div class="role-tag">Vice President</div>
-            <p>Oversees all sub-teams, manages competition timelines, and keeps everything moving from first design to
-              launch day.</p>
-          </div>
-          <div class="team-card reveal reveal-delay-2">
-            <div class="team-initials">AV</div>
-            <h3>Atharva Vignesh</h3>
-            <div class="role-tag">Vice President</div>
-            <p>Oversees all sub-teams, manages competition timelines, and keeps everything moving from first design to
-              launch day.</p>
-          </div>
-          <div class="team-card reveal reveal-delay-3">
-            <div class="team-initials">PG</div>
-            <h3>Pranav Gentela</h3>
-            <div class="role-tag">Executive Board</div>
-            <p>Core fabrication member responsible for structural builds and making sure hardware comes out exactly as
-              designed.</p>
-          </div>
-          <div class="team-card reveal">
-            <div class="team-initials">PK</div>
-            <h3>Prabhav Kongara</h3>
-            <div class="role-tag">Executive Board</div>
-            <p>Leads OpenRocket and RASAero simulations for every flight configuration, verifying stability and
-              performance margins.</p>
-          </div>
-          <div class="team-card reveal reveal-delay-1">
-            <div class="team-initials">KM</div>
-            <h3>Kunsh Mittal</h3>
-            <div class="role-tag">Executive Board</div>
-            <p>Post-flight data analysis: reads altimeter logs, compares to simulation predictions, and flags what needs
-              adjusting next build.</p>
-          </div>
-          <div class="team-card reveal reveal-delay-2">
-            <div class="team-initials">KS</div>
-            <h3>Krish Saravanakumar</h3>
-            <div class="role-tag">Executive Board</div>
-            <p>Designs and builds custom PCBs, avionics boards, and the embedded firmware that runs inside the rocket.
-            </p>
-          </div>
-          <div class="team-card reveal reveal-delay-3">
-            <div class="team-initials">PY</div>
-            <h3>Pranav Yogeswaran</h3>
-            <div class="role-tag">Executive Board</div>
-            <p>Builds the data pipelines and visualization tools that turn raw sensor output into something the whole
-              team can actually use.</p>
+          <div class="timeline-item">
+            <div class="timeline-date">Fall 2026</div>
+            <h3 style="font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.3rem;">Official SBHS club</h3>
+            <p>South Brunswick High School approved the Aerospace Club. General membership opened to all SBHS students.</p>
           </div>
         </div>
       </div>
@@ -222,84 +201,73 @@
     <section class="section" style="background: var(--surface);">
       <div class="container">
         <div class="section-header center reveal">
-          <h2 class="section-title">Common questions</h2>
+          <h2 class="section-title">Frequently asked questions</h2>
         </div>
         <div class="faq-list">
           <div class="faq-item reveal">
-            <button class="faq-q">Do I need experience to join? <span class="faq-icon">+</span></button>
+            <button class="faq-q">Do I need experience to join? <span class="faq-icon" aria-hidden="true">+</span></button>
             <div class="faq-a">
-              <p>Nope. We genuinely don't care if you've never touched a soldering iron or opened CAD software. You'll
-                learn it here; that's the whole point. Most of us didn't know what we were doing when we started either.
-              </p>
+              <p>No. General membership is open to all SBHS students, and no previous engineering experience is required. Skills are taught at meetings.</p>
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q">When do you meet? <span class="faq-icon">+</span></button>
+            <button class="faq-q">When does the club meet? <span class="faq-icon" aria-hidden="true">+</span></button>
             <div class="faq-a">
-              <p>We meet weekly after school at SBHS. Sub-team sessions are spread across the week depending on room
-                availability. Check in with us on Instagram or email for the current schedule.</p>
+              <p>General meetings are held monthly after school, from 2:30 to 4:00 PM. Upcoming dates are Wednesday, October 21 and Thursday, November 19. New dates are posted in Google Classroom (code qm5z27c2).</p>
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q">What competitions do you do? <span class="faq-icon">+</span></button>
+            <button class="faq-q">Which competitions does the club enter? <span class="faq-icon" aria-hidden="true">+</span></button>
             <div class="faq-a">
-              <p>Our main competition is the American Rocketry Challenge (ARC), one of the largest rocketry competitions
-                in the country. We also do regional launches through local rocketry clubs (TRA/NAR) and work on
-                open-ended research projects year-round.</p>
+              <p>For 2026&ndash;27, competitive teams are working on the American Rocketry Challenge, NASA TechRise, Genes in Space, Cubes in Space, the Aviation Design Challenge, and the REC Foundation Aerial Drone Competition.</p>
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q">Can I join if I'm a freshman? <span class="faq-icon">+</span></button>
+            <button class="faq-q">How do competitive teams work? <span class="faq-icon" aria-hidden="true">+</span></button>
             <div class="faq-a">
-              <p>Absolutely, freshmen are some of our most active members. The earlier you join, the more you'll get out
-                of it.</p>
+              <p>Competitive members are chosen through tryouts in the summer and in October. Each applicant completes one assignment tied to a skill the team needs. Competitive members are expected to spend significant time on their projects outside meetings. See <a href="tryouts.html" style="color: var(--accent); text-decoration: underline;">Tryouts &amp; Membership</a>.</p>
             </div>
           </div>
           <div class="faq-item reveal">
-            <button class="faq-q">How do I pick a sub-team? <span class="faq-icon">+</span></button>
+            <button class="faq-q">Does the club count on my transcript? <span class="faq-icon" aria-hidden="true">+</span></button>
             <div class="faq-a">
-              <p>You don't have to decide right away. Most new members attend a few general meetings, try stuff out, and
-                naturally gravitate toward whatever they enjoy. You can also float between teams if your interests span
-                multiple areas.</p>
+              <p>General members can have the club on their transcript if they meet the club&rsquo;s requirements. Details are in the <a href="https://docs.google.com/document/d/1rItyYDv6nXclFtqPGv5u8PPOAHr7BM8OMZgJ0leglac/edit" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">club information document</a>.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <h3>SBAerospace</h3>
-        <p>South Brunswick High School's student-run aerospace engineering team. We design, build, and fly rockets, and
-          everything inside them.</p>
+        <h3>SBHS Aerospace Club</h3>
+        <p>A student-run aerospace engineering club at South Brunswick High School in Monmouth Junction, New Jersey.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Work</a>
         <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
-        <a href="tryouts.html">Tryouts</a>
+        <a href="tryouts.html">Tryouts &amp; Membership</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <a href="mailto:sbhsaerospace@gmail.com">Email Us</a>
-        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank"
-          rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:sbhsaerospace@gmail.com">Email</a>
+        <a href="https://www.instagram.com/sbaeroclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank" rel="noopener noreferrer">Instagram (Team A)</a>
+        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/SBAerospace" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank"
-          rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="copy-year">2026</span> SBAerospace. South Brunswick, NJ.</span>
-      <a href="contact.html">sbhsaerospace@gmail.com</a>
+      <span>&copy; <span id="copy-year">2026</span> SBHS Aerospace Club &middot; South Brunswick High School, Monmouth Junction, NJ 08852</span>
+      <a href="mailto:sbhsaerospace@gmail.com">sbhsaerospace@gmail.com</a>
     </div>
   </footer>
 

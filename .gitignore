@@ -1,0 +1,15 @@
+# Local tooling (preview server config, editor settings)
+.claude/
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Python cache from local scripts
+__pycache__/
+*.pyc
+
+# Logs and temporary files
+*.log
+*.tmp

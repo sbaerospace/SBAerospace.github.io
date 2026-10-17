@@ -4,10 +4,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Work | SBAerospace</title>
-  <meta name="description" content="Explore our rocketry projects, research, and competition history at SBAerospace." />
-  <link rel="stylesheet" href="style.css?v=2.2" />
-  <script src="main.js" defer></script>
+  <title>Projects and Competitions | SBHS Aerospace Club</title>
+  <meta name="description" content="SBHS Aerospace Club projects: an ARC airbrake system and flight code, a NASA TechRise NDVI payload, CFD studies, rocket CAD, and the CircuitSpace planning tool." />
+  <link rel="canonical" href="https://sbaerospace.github.io/projects.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SBHS Aerospace Club" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Projects and Competitions | SBHS Aerospace Club" />
+  <meta property="og:description" content="SBHS Aerospace Club projects: an ARC airbrake system and flight code, a NASA TechRise NDVI payload, CFD studies, rocket CAD, and the CircuitSpace planning tool." />
+  <meta property="og:url" content="https://sbaerospace.github.io/projects.html" />
+  <meta property="og:image" content="https://sbaerospace.github.io/assets/og/sbhs-aerospace-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SBHS Aerospace Club members behind the launch rail at the 2025 American Rocketry Challenge National Finals" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects and Competitions | SBHS Aerospace Club" />
+  <meta name="twitter:description" content="SBHS Aerospace Club projects: an ARC airbrake system and flight code, a NASA TechRise NDVI payload, CFD studies, rocket CAD, and the CircuitSpace planning tool." />
+  <meta name="twitter:image" content="https://sbaerospace.github.io/assets/og/sbhs-aerospace-og.jpg" />
+  <meta name="twitter:image:alt" content="SBHS Aerospace Club members behind the launch rail at the 2025 American Rocketry Challenge National Finals" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <link rel="stylesheet" href="style.css?v=2.4" />
+  <script src="main.js?v=2.4" defer></script>
 </head>
 
 <body>
@@ -16,8 +36,8 @@
   <header>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <img src="assets/logo/white-logo.png" alt="SBAerospace logo" />
-        SBAerospace
+        <img src="assets/logo/white-logo-64.png" alt="" width="32" height="32" />
+        SBHS Aerospace
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
@@ -48,8 +68,8 @@
           </svg>
         </button>
 
-        <a href="contact.html" class="btn-nav">Join Us</a>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <a href="tryouts.html" class="btn-nav">Join Us</a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
         </button>
       </div>
@@ -63,181 +83,236 @@
     <a href="teams.html">Team</a>
     <a href="sponsor.html">Sponsor</a>
     <a href="contact.html">Contact</a>
-    <a href="tryouts.html" style="color: var(--accent);">Tryouts →</a>
+    <a href="tryouts.html" style="color: var(--accent);">Tryouts &amp; Membership</a>
   </nav>
 
   <main id="main">
 
     <div class="page-header">
       <div class="container">
-        <h1>Research. Projects. <em>Competition.</em></h1>
-        <p>Everything we've built, studied, and flown: organized by category.</p>
+        <h1>Projects and Competitions</h1>
+        <p>What SBHS Aerospace Club members have designed, simulated, built, and flown. Each project is labeled with its stage: CAD, simulation, software, prototype, or flown.</p>
       </div>
     </div>
 
-    <section class="section">
+    <section class="section" style="padding-top: 40px;">
       <div class="container">
 
         <!-- TAB BAR -->
         <div class="tab-bar" role="tablist">
           <button class="tab-btn active" data-tab="tab-projects" role="tab" aria-selected="true"
-            id="tab-projects-btn">Projects</button>
+            aria-controls="tab-projects" id="tab-projects-btn">Hardware</button>
           <button class="tab-btn" data-tab="tab-research" role="tab" aria-selected="false"
-            id="tab-research-btn">Research</button>
+            aria-controls="tab-research" id="tab-research-btn">Simulation &amp; Tools</button>
           <button class="tab-btn" data-tab="tab-competition" role="tab" aria-selected="false"
-            id="tab-competition-btn">Competition</button>
+            aria-controls="tab-competition" id="tab-competition-btn">Competitions</button>
         </div>
 
-        <!-- ── PROJECTS ──────────────────────────────────── -->
-        <div class="tab-panel active" id="tab-projects" role="tabpanel">
+        <!-- ── HARDWARE ──────────────────────────────────── -->
+        <div class="tab-panel active" id="tab-projects" role="tabpanel" aria-labelledby="tab-projects-btn">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Hardware and flight software</h2>
           <div class="cards-grid">
 
-            <div class="project-card reveal">
-              <div class="project-card-img">
-                <img src="assets/showcase/Airbrakes.png" alt="Active airbrake system on a rocket" />
+            <article class="project-card reveal">
+              <div class="project-card-img contain">
+                <img src="assets/photos/airbrake-cad-700.webp" width="700" height="788" loading="lazy" decoding="async"
+                  alt="CAD render of the airbrake module: a cylindrical airframe section with four red flaps extended" />
               </div>
               <div class="project-card-body">
-                <h3>Active Airbrake System</h3>
-                <p>Three servo-actuated flaps that autonomously deploy mid-flight to bleed off speed and hit a precise
-                  target apogee. Runs a PID control loop with Kalman-filtered altitude data from our custom avionics.</p>
+                <span class="stage-tag">CAD + flight code</span>
+                <h3>ARC airbrake system (2025&ndash;26)</h3>
+                <p>An airbrake module for the 2025&ndash;26 American Rocketry Challenge rocket. Four flaps fold out of a 3D-printed airframe section to add drag, so the rocket can be slowed toward the 750&nbsp;ft target altitude.</p>
+                <ul class="project-detail">
+                  <li>Version 2 CAD covers the airbrake chassis, flaps, flap joints, fin can, and electronics-bay centering ring, saved as 3D-print files.</li>
+                  <li>A servo moves the flaps, controlled by the Rocket++ flight code.</li>
+                </ul>
+                <a class="card-link" href="https://github.com/SBAerospace/CAD" target="_blank" rel="noopener noreferrer">CAD files on GitHub &rarr;</a>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img">
-                <img src="assets/showcase/Rocket++.png" alt="Rocket++ custom flight computer" />
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-card-img top">
+                <img src="assets/photos/rocketplus-code-1000.webp" width="1000" height="957" loading="lazy" decoding="async"
+                  alt="Screenshot of the Rocket++ main.cpp file, showing sensor libraries for the BME280 and MPU6050, a servo, and a 228.6 meter target apogee" />
               </div>
               <div class="project-card-body">
-                <h3>Rocket++</h3>
-                <p>Our in-house flight computer. State machine-based flight detection, dual-deploy ejection charge
-                  firing, telemetry logging to onboard flash, and a custom PCB laid out in KiCad.</p>
+                <span class="stage-tag">Software</span>
+                <h3>Rocket++ airbrake flight code</h3>
+                <p>C++ flight code for the airbrake system, written for an Arduino-compatible board. It reads a BME280 barometric sensor and an MPU6050 accelerometer, predicts apogee during flight, and decides when to deploy the brakes to reach 750&nbsp;ft (228.6&nbsp;m).</p>
+                <ul class="project-detail">
+                  <li>The screenshot shows an early version; mass and drag constants are set for each rocket.</li>
+                </ul>
+                <a class="card-link" href="https://github.com/SBAerospace/Airbrakes" target="_blank" rel="noopener noreferrer">Code on GitHub &rarr;</a>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card reveal reveal-delay-2">
+            <article class="project-card reveal reveal-delay-2">
               <div class="project-card-img">
-                <img src="assets/showcase/CircuitSpace.png" alt="CircuitSpace web circuit simulator" />
+                <img src="assets/photos/ndvi-payload-prototype-600.webp" width="600" height="800" loading="lazy" decoding="async"
+                  alt="NDVI payload prototype: a microcontroller and sensor boards wired inside a clear rectangular enclosure on a workbench" />
               </div>
               <div class="project-card-body">
+                <span class="stage-tag">Prototype</span>
+                <h3>NDVI vegetation-mapping payload (NASA TechRise)</h3>
+                <p>Our NASA TechRise payload measures how much visible and near-infrared light the ground reflects. Those readings are used to calculate NDVI, a common measure of plant health.</p>
+                <ul class="project-detail">
+                  <li>Sensors: AS7343 spectral sensor (visible and near-infrared channels), TSL2591 light sensor, BME280, and MPU6050.</li>
+                  <li>Records World View balloon telemetry and sensor readings to an SD card once per second.</li>
+                  <li>Python flight software keeps logging if a sensor fails and shows status on LEDs.</li>
+                </ul>
+                <a class="card-link" href="https://github.com/SBAerospace/NDVI-Mapping" target="_blank" rel="noopener noreferrer">Payload code on GitHub &rarr;</a>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-card-img">
+                <img src="assets/photos/arc-2027-build-pad-370.webp" width="370" height="362" loading="lazy" decoding="async"
+                  alt="A red and white SBHS student-built competition rocket standing on a launch rail in a grass field" />
+              </div>
+              <div class="project-card-body">
+                <span class="stage-tag">Flown</span>
+                <h3>ARC competition rockets</h3>
+                <p>Each season, a club team designs and builds a rocket for the American Rocketry Challenge. The rocket has to carry a raw egg, hit set altitude and flight-time targets, and bring the egg back uncracked.</p>
+                <ul class="project-detail">
+                  <li>2024 and 2025: flown at the National Finals.</li>
+                  <li>Photo: SBHS students&rsquo; ARC build on the pad at the World Space Week launch at North Branch Park, October 2026.</li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ── SIMULATION & TOOLS ──────────────────────────── -->
+        <div class="tab-panel" id="tab-research" role="tabpanel" aria-labelledby="tab-research-btn">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Simulation and design tools</h2>
+          <div class="cards-grid">
+
+            <article class="project-card reveal">
+              <div class="project-card-img contain">
+                <img src="assets/photos/airbrake-cfd-1234.webp" width="1234" height="934" loading="lazy" decoding="async"
+                  alt="Two CFD flow plots of the rocket in side view: the top without airbrake flaps, the bottom with flaps extended at mid-body" />
+              </div>
+              <div class="project-card-body">
+                <span class="stage-tag">Simulation</span>
+                <h3>Airbrake CFD study</h3>
+                <p>A computational fluid dynamics (CFD) comparison of airflow around the rocket without airbrake flaps (top) and with the flaps extended (bottom). These are simulation results, not flight measurements.</p>
+              </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-card-img top">
+                <img src="assets/photos/circuitspace-1100.webp" width="1100" height="920" loading="lazy" decoding="async"
+                  alt="CircuitSpace screenshot: a component library on the left and a wiring diagram connecting a 9V battery, altimeter, and airbrake servo" />
+              </div>
+              <div class="project-card-body">
+                <span class="stage-tag neutral">Web tool</span>
                 <h3>CircuitSpace</h3>
-                <p>A web-based circuit simulator built from scratch in JavaScript. Made so members can learn schematic
-                  design and simulate basic circuits without needing paid tools or local installs.</p>
+                <p>A browser-based planner for rocket electronics. Members place batteries, switches, flight computers, and servos and connect them; the tool checks the wiring, lists the parts, estimates mass, and exports diagrams as SVG.</p>
+                <a class="card-link" href="https://github.com/SBAerospace/CircuitSpace" target="_blank" rel="noopener noreferrer">CircuitSpace on GitHub &rarr;</a>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card reveal">
-              <div class="project-card-img">
-                <img src="assets/showcase/Rocket.jpeg" alt="SBAerospace ARC 2025 rocket" />
-              </div>
+            <article class="project-card reveal reveal-delay-2">
               <div class="project-card-body">
-                <h3>ARC 2025 Competition Rocket</h3>
-                <p>Our American Rocketry Challenge build. G12 fiberglass airframe, dual-deploy recovery, and Rocket++
-                  for avionics. We rely on OpenRocket simulations to model stability, test hypothetical wind conditions,
-                  and tune the flight profile to target exactly 800 ft.</p>
+                <span class="stage-tag">Simulation</span>
+                <h3>OpenRocket flight simulation</h3>
+                <p>Before building, teams model their rockets in OpenRocket to check stability and predict altitude and flight time against the ARC targets. Tryout applicants for simulation roles practice the same process.</p>
               </div>
-            </div>
+            </article>
 
           </div>
         </div>
 
-        <!-- ── RESEARCH ────────────────────────────────────── -->
-        <div class="tab-panel" id="tab-research" role="tabpanel">
+        <!-- ── COMPETITIONS ────────────────────────────────── -->
+        <div class="tab-panel" id="tab-competition" role="tabpanel" aria-labelledby="tab-competition-btn">
+          <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.75rem;">Competition record</h2>
+          <p style="color: var(--text-2); max-width: 680px; margin-bottom: 1.75rem; line-height: 1.65;">
+            Past results by season. At one of our National Finals appearances, a club team placed 50th of the 100 finalists.
+          </p>
           <div class="cards-grid">
 
-            <div class="project-card reveal">
-              <div class="project-card-body">
-                <h3>Airbrake CFD Analysis</h3>
-                <p>Computational fluid dynamics study of our airbrake geometry at transonic speeds. Used OpenFOAM to
-                  characterize drag at various deployment angles and validated against RASAero simulations.</p>
-              </div>
-            </div>
-
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-body">
-                <h3>Flight Data Post-Processing</h3>
-                <p>Python pipeline for pulling, cleaning, and visualizing flight data from Rocket++ logs. Reconstructs
-                  flight profiles, checks sensor agreement, and exports CSVs for simulation comparison.</p>
-              </div>
-            </div>
-
-            <div class="project-card reveal reveal-delay-2">
-              <div class="project-card-body">
-                <h3>Fin FEA Study</h3>
-                <p>Finite element analysis of our trapezoidal fin geometry under max-Q aerodynamic loading. Compared G10
-                  fiberglass vs. carbon fiber layups to optimize stiffness-to-weight ratio.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ── COMPETITION ────────────────────────────────── -->
-        <div class="tab-panel" id="tab-competition" role="tabpanel">
-          <div class="cards-grid">
-
-            <div class="project-card reveal">
+            <article class="project-card reveal">
               <div class="project-card-img">
-                <img src="assets/showcase/Rocket.jpeg" alt="ARC competition rocket" />
+                <img src="assets/photos/arc-2025-finals-team-861.webp" width="861" height="608" loading="lazy" decoding="async"
+                  alt="Nine SBHS Aerospace Club members in matching navy shirts in front of the American Rocketry Challenge backdrop" />
               </div>
               <div class="project-card-body">
-                <h3>American Rocketry Challenge 2025</h3>
-                <p>
-                  Our current ARC entry. The challenge: hit an 800 ft target altitude, land within a 40-45 second
-                  flight window, and bring back an unbroken raw egg. We're building a full custom rocket with in-house
-                  avionics to do it.
-                </p>
+                <span class="stage-tag neutral">2025 season</span>
+                <h3>American Rocketry Challenge National Finals</h3>
+                <p>A club team qualified for the 2025 National Finals in The Plains, Virginia, and flew its rocket there.</p>
               </div>
-            </div>
+            </article>
 
-            <div class="project-card reveal reveal-delay-1">
-              <div class="project-card-img">
-                <img src="assets/team/2024-nationals.jpeg" alt="SBAerospace team at the ARC 2024 National Finals" />
+            <article class="project-card reveal reveal-delay-1">
+              <div class="project-card-img top">
+                <img src="assets/photos/arc-2024-finals-launch-600.webp" width="600" height="797" loading="lazy" decoding="async"
+                  style="object-position: center 55%;"
+                  alt="Club members watch their yellow-finned rocket leave the pad at the 2024 American Rocketry Challenge National Finals" />
               </div>
               <div class="project-card-body">
-                <h3>American Rocketry Challenge 2024</h3>
-                <p>Our first ARC season. We built, flew, and competed, marking the beginning of a lot we're still
-                  learning from.</p>
+                <span class="stage-tag neutral">2024 season</span>
+                <h3>American Rocketry Challenge National Finals</h3>
+                <p>A club team qualified for the 2024 National Finals, one of the 100 teams invited to fly in The Plains, Virginia.</p>
               </div>
-            </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-2">
+              <div class="project-card-img">
+                <img src="assets/photos/techrise-2026-team-640.webp" width="640" height="480" loading="lazy" decoding="async"
+                  alt="SBHS Aerospace Club members in a school lab with their NASA TechRise Student Challenge certificate" />
+              </div>
+              <div class="project-card-body">
+                <span class="stage-tag neutral">2026</span>
+                <h3>NASA TechRise Student Challenge winner</h3>
+                <p>The team&rsquo;s NDVI vegetation-mapping payload was selected as a 2026 TechRise winner. Payload details are under Hardware.</p>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-card-body">
+                <span class="stage-tag">2026&ndash;27 season</span>
+                <h3>Current teams</h3>
+                <p>Competitive teams for 2026&ndash;27 are working on the American Rocketry Challenge, NASA TechRise, Genes in Space, Cubes in Space, the Aviation Design Challenge, and the REC Foundation Aerial Drone Competition.</p>
+                <a class="card-link" href="teams.html#competitions">Team status &rarr;</a>
+              </div>
+            </article>
 
           </div>
         </div>
 
       </div>
     </section>
-
   </main>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <h3>SBAerospace</h3>
-        <p>South Brunswick High School's student-run aerospace engineering team. We design, build, and fly rockets, and
-          everything inside them.</p>
+        <h3>SBHS Aerospace Club</h3>
+        <p>A student-run aerospace engineering club at South Brunswick High School in Monmouth Junction, New Jersey.</p>
       </div>
       <div class="footer-col">
         <h4>Pages</h4>
+        <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="projects.html">Work</a>
         <a href="teams.html">Team</a>
         <a href="sponsor.html">Sponsor</a>
         <a href="contact.html">Contact</a>
-        <a href="tryouts.html">Tryouts</a>
+        <a href="tryouts.html">Tryouts &amp; Membership</a>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <a href="mailto:sbhsaerospace@gmail.com">Email Us</a>
-        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank"
-          rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:sbhsaerospace@gmail.com">Email</a>
+        <a href="https://www.instagram.com/sbaeroclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.instagram.com/sbhs_aerospaceclub_team_a/" target="_blank" rel="noopener noreferrer">Instagram (Team A)</a>
+        <a href="https://www.linkedin.com/company/south-brunswick-high-school-aerospace" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/SBAerospace" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank"
-          rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.facebook.com/people/SB-Aerospace/61559474409905/" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="copy-year">2026</span> SBAerospace. South Brunswick, NJ.</span>
+      <span>&copy; <span id="copy-year">2026</span> SBHS Aerospace Club &middot; South Brunswick High School, Monmouth Junction, NJ 08852</span>
       <a href="mailto:sbhsaerospace@gmail.com">sbhsaerospace@gmail.com</a>
     </div>
   </footer>

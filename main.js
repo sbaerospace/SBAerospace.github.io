@@ -15,15 +15,15 @@ function applyTheme(theme) {
 
 // ─── ANNOUNCEMENT BANNER ──────────────────────────────────
 (function initBanner() {
-  const BANNER_KEY = 'sba-banner-dismissed';
+  const BANNER_KEY = 'sba-banner-dismissed-2026-10';
   if (sessionStorage.getItem(BANNER_KEY)) return;
 
   const banner = document.createElement('div');
   banner.className = 'announce-banner';
   banner.id = 'announceBanner';
   banner.innerHTML = `
-    <span>Fall Tryouts (Round 2) & General Membership info for 2026-27 are live!</span>
-    <a href="tryouts.html">View details →</a>
+    <span>Next general meeting: Wednesday, Oct 21, 2:30–4:00 PM. All SBHS students are welcome.</span>
+    <a href="tryouts.html">Membership info →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
   // Insert before header (first element of body)
@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => {
+      // Start the menu below the header, which sits lower while the announcement banner is visible
+      const header = document.querySelector('header');
+      if (header) mobileNav.style.top = Math.max(0, header.getBoundingClientRect().bottom) + 'px';
       const open = mobileNav.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', open);
     });
@@ -96,9 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
   if (tabBtns.length > 0) {
     tabBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
         tabPanels.forEach(p => p.classList.remove('active'));
         btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
         const target = document.getElementById(btn.dataset.tab);
         if (target) target.classList.add('active');
       });
@@ -112,22 +116,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const programs = {
     rocketry: {
       title: 'Rocketry',
-      desc: 'We design, build, and launch high-power rockets from the ground up: airframes, fins, recovery systems, and all the math behind it.',
+      desc: 'We design, assemble, and launch competition rockets: airframes, fins, parachute recovery systems, and aerodynamic flight calculations.',
       features: ['ARC competition builds', 'OpenRocket & RASAero simulation', 'Composite and fiberglass airframes', 'Dual-deploy recovery systems'],
     },
     electronics: {
       title: 'Electronics',
-      desc: 'Custom avionics, PCB design, and embedded firmware. Everything from flight computers to ground station radios.',
+      desc: 'Custom avionics, PCB design, and embedded firmware, ranging from flight computers to ground station radios.',
       features: ['KiCad schematic & PCB layout', 'Microcontroller firmware (C/Python)', 'RF telemetry systems', 'Custom flight data logging'],
     },
     mechanical: {
       title: 'Mechanical',
-      desc: 'CAD-driven design and hands-on fabrication. We build the structures, fins, aero surfaces, and test rigs that make the mission possible.',
+      desc: 'CAD modeling and hands-on fabrication for rocket airframes, aero surfaces, custom test rigs, and vehicle chassis.',
       features: ['SolidWorks & Fusion 360 CAD', 'FEA structural analysis', 'Composite manufacturing', 'CNC milling & 3D printing'],
     },
     software: {
       title: 'Software',
-      desc: 'From flight simulations to ground station GUIs, our software builds the tools the whole team relies on.',
+      desc: 'Flight simulation pipelines, real-time telemetry dashboards, and data analysis tools used across our competition teams.',
       features: ['Flight path simulation', 'Real-time telemetry dashboards', 'Data analysis & visualization', 'Embedded Python & C++ firmware'],
     },
   };
@@ -188,20 +192,6 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(() => {
     bars.forEach(bar => { bar.style.width = bar.dataset.pct || '70%'; });
   }, 600);
-
-  // ─── FORMS (mock submit) ──────────────────────────────────
-  ['contactForm', 'sponsorForm'].forEach(id => {
-    const form = document.getElementById(id);
-    if (!form) return;
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Sent ✓';
-      btn.disabled = true;
-      setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 3500);
-    });
-  });
 
   // ─── HERO INTERACTIVE ROCKET ──────────────────────────────
   const hero = document.querySelector('.hero');
