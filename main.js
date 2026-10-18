@@ -424,9 +424,11 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ─── PHOTO VIEWER ──────────────────────────────────────────
-  // Any <img data-lightbox="group"> opens full screen; arrows step through images in the same group.
+  // Any <img data-lightbox="group"> opens full screen; arrows step through images in the same group
+  // (one group per project or photo box). Images inside a hidden .lightbox-extra only appear in the viewer.
   // data-full points to a larger file when there is one; the caption comes from data-caption or alt.
   const lbImages = [...document.querySelectorAll('img[data-lightbox]')];
+  const isExtra = (el) => !!el.closest('.lightbox-extra');
   if (lbImages.length) {
     const box = document.createElement('div');
     box.className = 'lightbox';
@@ -460,7 +462,7 @@ document.addEventListener('DOMContentLoaded', function () {
       prevBtn.hidden = nextBtn.hidden = group.length < 2;
     };
     const open = (img) => {
-      group = lbImages.filter(el => el.dataset.lightbox === img.dataset.lightbox && el.offsetParent !== null);
+      group = lbImages.filter(el => el.dataset.lightbox === img.dataset.lightbox && (isExtra(el) || el.offsetParent !== null));
       if (!group.includes(img)) group = [img];
       opener = img;
       show(group.indexOf(img));
@@ -475,7 +477,19 @@ document.addEventListener('DOMContentLoaded', function () {
       if (opener) opener.focus();
     };
 
-    lbImages.forEach(img => {
+    const zoomIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">' +
+      '<circle cx="10.5" cy="10.5" r="6.5" /><path d="M15.5 15.5 L20.5 20.5" /><path d="M10.5 7.8 V13.2 M7.8 10.5 H13.2" /></svg>';
+    lbImages.filter(img => !isExtra(img)).forEach(img => {
+      // wrap so a small magnifier button can sit on the photo's corner
+      const wrap = document.createElement('span');
+      wrap.className = 'zoom-wrap';
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+      const badge = document.createElement('span');
+      badge.className = 'zoom-badge';
+      badge.setAttribute('aria-hidden', 'true');
+      badge.innerHTML = zoomIcon;
+      wrap.appendChild(badge);
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
       img.setAttribute('aria-label', 'View larger: ' + img.alt);

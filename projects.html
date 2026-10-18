@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=4.2" />
-  <script src="main.js?v=4.2" defer></script>
+  <link rel="stylesheet" href="style.css?v=4.5" />
+  <script src="main.js?v=4.5" defer></script>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
   <header>
     <div class="nav-inner">
       <a href="index.html" class="logo">
-        <img src="assets/logo/badge-gold-96.png" alt="" width="40" height="40" />
+        <img src="assets/logo/badge-white-96.png" alt="" width="40" height="40" />
         SBHS Aerospace
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
@@ -152,9 +152,12 @@
 
             <article class="project-card reveal">
               <div class="project-card-img contain">
-                <img data-lightbox="work-hardware" data-full="assets/photos/airbrake-cad-1200.webp" src="assets/photos/airbrake-cad-700.webp" width="700" height="788" loading="lazy" decoding="async"
+                <img data-lightbox="airbrakes" data-full="assets/photos/airbrake-cad-1200.webp" src="assets/photos/airbrake-cad-700.webp" width="700" height="788" loading="lazy" decoding="async"
                   alt="CAD render of the airbrake module: a cylindrical airframe section with four red flaps extended" />
               </div>
+                <div class="lightbox-extra" hidden>
+                  <img data-lightbox="airbrakes" data-caption="CFD of the airflow without the airbrake flaps (top) and with them out (bottom). Simulation results, not flight data." src="assets/photos/airbrake-cfd-1234.webp" loading="lazy" decoding="async" alt="Two CFD flow plots of the rocket: the top without airbrake flaps, the bottom with the flaps extended" />
+                </div>
               <div class="project-card-body">
                 <h3>Airbrakes for the 2025-26 ARC rocket</h3>
                 <p>Four flaps fold out of a 3D-printed section of the airframe to add drag, so the rocket can slow itself down on the way to its 750&nbsp;ft target. So far this exists as CAD and code. The picture is a CAD render.</p>
@@ -165,7 +168,7 @@
 
             <article class="project-card reveal reveal-delay-1">
               <div class="project-card-img top">
-                <img data-lightbox="work-hardware" data-full="assets/photos/rocketplus-code-1800.webp" src="assets/photos/rocketplus-code-1000.webp" width="1000" height="957" loading="lazy" decoding="async"
+                <img data-lightbox="rocketplus" data-full="assets/photos/rocketplus-code-1800.webp" src="assets/photos/rocketplus-code-1000.webp" width="1000" height="957" loading="lazy" decoding="async"
                   alt="Screenshot of the Rocket++ main.cpp file, showing sensor libraries for the BME280 and MPU6050, a servo, and a 228.6 meter target apogee" />
               </div>
               <div class="project-card-body">
@@ -178,9 +181,17 @@
 
             <article class="project-card reveal reveal-delay-2">
               <div class="project-card-img">
-                <img data-lightbox="work-hardware" data-full="assets/photos/ndvi-payload-prototype-1600.webp" src="assets/photos/ndvi-payload-prototype-600.webp" width="600" height="800" loading="lazy" decoding="async"
-                  alt="NDVI payload prototype: a microcontroller and sensor boards wired inside a clear rectangular enclosure on a workbench" />
+                <img data-lightbox="ndvi" data-full="assets/photos/techrise-weekly-meeting-1600.webp" src="assets/photos/techrise-weekly-meeting-800.webp" width="800" height="836" loading="lazy" decoding="async"
+                  style="object-position: center 45%;"
+                  alt="Team members working on laptops around the NASA TechRise kit boxes at a weekly meeting" />
               </div>
+                <div class="lightbox-extra" hidden>
+                  <img data-lightbox="ndvi" data-full="assets/photos/techrise-payload-check-1600.webp" data-caption="Checking the payload in its clear enclosure. March 2026." src="assets/photos/techrise-payload-check-800.webp" loading="lazy" decoding="async" alt="Two team members checking the payload inside its clear enclosure next to a laptop" />
+                  <img data-lightbox="ndvi" data-full="assets/photos/ndvi-payload-prototype-1600.webp" data-caption="A close look at the payload prototype and its wiring." src="assets/photos/ndvi-payload-prototype-600.webp" loading="lazy" decoding="async" alt="NDVI payload prototype: a microcontroller and sensor boards wired inside a clear rectangular enclosure on a workbench" />
+                  <img data-lightbox="ndvi" data-full="assets/photos/techrise-wiring-1600.webp" data-caption="Wiring and testing the payload sensors. March 2026." src="assets/photos/techrise-wiring-800.webp" loading="lazy" decoding="async" alt="A team member wiring a sensor board while a phone shows live readings" />
+                  <img data-lightbox="ndvi" data-full="assets/photos/techrise-electronics-1600.webp" data-caption="Connecting the payload electronics. March 2026." src="assets/photos/techrise-electronics-800.webp" loading="lazy" decoding="async" alt="Three team members connecting payload electronics at a table" />
+                  <img data-lightbox="ndvi" data-full="assets/photos/techrise-soldering-1600.webp" data-caption="Practicing soldering for the payload build. February 2026." src="assets/photos/techrise-soldering-800.webp" loading="lazy" decoding="async" alt="A team member soldering at a workbench with a blue silicone mat" />
+                </div>
               <div class="project-card-body">
                 <h3>NDVI payload for NASA TechRise</h3>
                 <p>This is a prototype of our TechRise payload. It measures how much visible and near-infrared light comes off the ground, which is what you need to calculate NDVI, a standard way to measure plant health.</p>
@@ -191,9 +202,13 @@
 
             <article class="project-card reveal">
               <div class="project-card-img photo-full">
-                <img data-lightbox="work-hardware" src="assets/photos/arc-2027-build-pad-480.webp" width="480" height="308" loading="lazy" decoding="async"
+                <img data-lightbox="arc-rockets" src="assets/photos/arc-2027-build-pad-480.webp" width="480" height="308" loading="lazy" decoding="async"
                   alt="A red and white SBHS student-built competition rocket standing on a launch rail in a grass field" />
               </div>
+                <div class="lightbox-extra" hidden>
+                  <img data-lightbox="arc-rockets" data-full="assets/photos/arc-2025-finals-launch-1200.webp" data-caption="Liftoff at the 2025 National Finals." src="assets/photos/arc-2025-finals-launch-640.webp" loading="lazy" decoding="async" alt="SBHS Aerospace Club members stand behind the launch rail as their rocket lifts off at the 2025 American Rocketry Challenge National Finals" />
+                  <img data-lightbox="arc-rockets" data-full="assets/photos/arc-2024-finals-launch-1500.webp" data-caption="Liftoff at the 2024 National Finals." src="assets/photos/arc-2024-finals-launch-600.webp" loading="lazy" decoding="async" alt="Club members watch their yellow-finned rocket leave the pad at the 2024 American Rocketry Challenge National Finals" />
+                </div>
               <div class="project-card-body">
                 <h3>ARC competition rockets</h3>
                 <p>Every season, a club team builds a rocket for the American Rocketry Challenge. It has to carry a raw egg to a set altitude, stay up for a set amount of time, and bring the egg back without a crack. Our teams flew at the National Finals in 2024, 2025, and 2026.</p>
@@ -211,7 +226,7 @@
 
             <article class="project-card reveal">
               <div class="project-card-img contain">
-                <img data-lightbox="work-tools" src="assets/photos/airbrake-cfd-1234.webp" width="1234" height="934" loading="lazy" decoding="async"
+                <img data-lightbox="cfd" src="assets/photos/airbrake-cfd-1234.webp" width="1234" height="934" loading="lazy" decoding="async"
                   alt="Two CFD flow plots of the rocket in side view: the top without airbrake flaps, the bottom with flaps extended at mid-body" />
               </div>
               <div class="project-card-body">
@@ -222,7 +237,7 @@
 
             <article class="project-card reveal reveal-delay-1">
               <div class="project-card-img top">
-                <img data-lightbox="work-tools" data-full="assets/photos/circuitspace-2000.webp" src="assets/photos/circuitspace-1200.webp" width="1200" height="634" loading="lazy" decoding="async"
+                <img data-lightbox="circuitspace" data-full="assets/photos/circuitspace-2000.webp" src="assets/photos/circuitspace-1200.webp" width="1200" height="634" loading="lazy" decoding="async"
                   alt="CircuitSpace screenshot: a component library of batteries, regulators, and microcontrollers on the left, a schematic canvas in the middle, and a power summary showing current draw, estimated runtime, and mass" />
               </div>
               <div class="project-card-body">
@@ -234,7 +249,7 @@
 
             <article class="project-card reveal reveal-delay-2">
               <div class="project-card-img contain" style="background: #eeefef;">
-                <img data-lightbox="work-tools" data-full="assets/photos/openrocket-arc-2027-2000.webp" src="assets/photos/openrocket-arc-2027-1000.webp" width="1000" height="329" loading="lazy" decoding="async"
+                <img data-lightbox="openrocket" data-full="assets/photos/openrocket-arc-2027-2000.webp" src="assets/photos/openrocket-arc-2027-1000.webp" width="1000" height="329" loading="lazy" decoding="async"
                   style="background: #eeefef;"
                   alt="OpenRocket side view of the club's ARC 2027 rocket design, 89.5 cm long, with its center of gravity and center of pressure marked" />
               </div>
@@ -257,9 +272,15 @@
 
             <article class="project-card reveal">
               <div class="project-card-img">
-                <img data-lightbox="work-results" data-full="assets/photos/techrise-team-certificate-1600.webp" src="assets/photos/techrise-team-certificate-800.webp" width="800" height="490" loading="lazy" decoding="async"
+                <img data-lightbox="result-techrise" data-full="assets/photos/techrise-team-certificate-1600.webp" src="assets/photos/techrise-team-certificate-800.webp" width="800" height="490" loading="lazy" decoding="async"
                   alt="SBHS Aerospace Club TechRise team members and advisor Ms. Chishti holding the NASA TechRise Student Challenge certificate in a school lab" />
               </div>
+                <div class="lightbox-extra" hidden>
+                  <img data-lightbox="result-techrise" data-full="assets/photos/techrise-weekly-meeting-1600.webp" data-caption="A weekly TechRise meeting, with the kit boxes on the table. February 2026." src="assets/photos/techrise-weekly-meeting-800.webp" loading="lazy" decoding="async" alt="Team members working on laptops around the NASA TechRise kit boxes at a weekly meeting" />
+                  <img data-lightbox="result-techrise" data-full="assets/photos/techrise-payload-check-1600.webp" data-caption="Checking the payload in its clear enclosure. March 2026." src="assets/photos/techrise-payload-check-800.webp" loading="lazy" decoding="async" alt="Two team members checking the payload inside its clear enclosure next to a laptop" />
+                  <img data-lightbox="result-techrise" data-full="assets/photos/techrise-build-session-1600.webp" data-caption="A payload build session. March 2026." src="assets/photos/techrise-build-session-800.webp" loading="lazy" decoding="async" alt="Five team members working at a long table during a payload build session" />
+                  <img data-lightbox="result-techrise" data-full="assets/photos/techrise-solder-station-1600.webp" data-caption="Reviewing the circuit at the soldering station. February 2026." src="assets/photos/techrise-solder-station-800.webp" loading="lazy" decoding="async" alt="Two team members at the soldering station in front of a NASA research poster" />
+                </div>
               <div class="project-card-body">
                 <h3>2026 NASA TechRise Winner</h3>
                 <p>Our NDVI payload was chosen as a TechRise Student Challenge winner. There's more about it under Hardware.</p>
@@ -275,9 +296,12 @@
 
             <article class="project-card reveal reveal-delay-2">
               <div class="project-card-img">
-                <img data-lightbox="work-results" src="assets/photos/arc-2025-finals-team-1400.jpg" srcset="assets/photos/arc-2025-finals-team-800.jpg 800w, assets/photos/arc-2025-finals-team-1400.jpg 1400w" sizes="(max-width: 860px) 100vw, 580px" width="1400" height="989" loading="lazy" decoding="async"
+                <img data-lightbox="result-arc-2025" src="assets/photos/arc-2025-finals-team-1400.jpg" srcset="assets/photos/arc-2025-finals-team-800.jpg 800w, assets/photos/arc-2025-finals-team-1400.jpg 1400w" sizes="(max-width: 860px) 100vw, 580px" width="1400" height="989" loading="lazy" decoding="async"
                   alt="Nine SBHS Aerospace Club members in matching navy shirts in front of the American Rocketry Challenge backdrop" />
               </div>
+                <div class="lightbox-extra" hidden>
+                  <img data-lightbox="result-arc-2025" data-full="assets/photos/arc-2025-finals-launch-1200.webp" data-caption="Liftoff at the 2025 National Finals." src="assets/photos/arc-2025-finals-launch-640.webp" loading="lazy" decoding="async" alt="SBHS Aerospace Club members stand behind the launch rail as their rocket lifts off at the 2025 American Rocketry Challenge National Finals" />
+                </div>
               <div class="project-card-body">
                 <h3>2025 ARC National Finals</h3>
                 <p>A club team qualified again and flew at the finals in The Plains, Virginia.</p>
@@ -286,7 +310,7 @@
 
             <article class="project-card reveal reveal-delay-2">
               <div class="project-card-img top">
-                <img data-lightbox="work-results" data-full="assets/photos/arc-2024-finals-launch-1500.webp" src="assets/photos/arc-2024-finals-launch-600.webp" width="600" height="797" loading="lazy" decoding="async"
+                <img data-lightbox="result-arc-2024" data-full="assets/photos/arc-2024-finals-launch-1500.webp" src="assets/photos/arc-2024-finals-launch-600.webp" width="600" height="797" loading="lazy" decoding="async"
                   style="object-position: center 55%;"
                   alt="Club members watch their yellow-finned rocket leave the pad at the 2024 American Rocketry Challenge National Finals" />
               </div>

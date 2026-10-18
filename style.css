@@ -1968,7 +1968,7 @@ h1, h2, h3, .hero-title, .section-title, .logo, .cta-banner h2 { font-family: va
 @media (max-width: 640px) { .announce-dot { display: none; } }
 
 /* ─── Photo viewer ──────────────────────────────────────── */
-img.zoomable { cursor: zoom-in; }
+img.zoomable { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='34' viewBox='0 0 34 34'%3E%3Ccircle cx='14' cy='14' r='9.5' fill='rgba(10,10,10,0.55)' stroke='%230A0A0A' stroke-width='4.5'/%3E%3Cpath d='M21 21 L30 30' stroke='%230A0A0A' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='14' r='9.5' fill='none' stroke='%23D4AF51' stroke-width='2.2'/%3E%3Cpath d='M21 21 L30 30' stroke='%23D4AF51' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M14 9.5 V18.5 M9.5 14 H18.5' stroke='%23F5F0E8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 14 14, zoom-in; }
 img.zoomable:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 .lightbox {
   position: fixed; inset: 0; z-index: 1000;
@@ -2004,9 +2004,7 @@ body.lightbox-open { overflow: hidden; }
 /* ─── Club badge ────────────────────────────────────────── */
 .hero-badge { width: 96px; height: 96px; margin-bottom: 1.25rem; filter: drop-shadow(0 6px 18px rgba(212,175,81,0.25)); }
 .footer-badge { width: 64px; height: 64px; margin-bottom: 1rem; opacity: 0.92; }
-.page-art-badge img { display: block; width: 100%; height: auto; animation: drift 7s ease-in-out infinite; filter: drop-shadow(0 8px 24px rgba(212,175,81,0.22)); }
 @media (max-width: 640px) { .hero-badge { width: 72px; height: 72px; } }
-@media (prefers-reduced-motion: reduce) { .page-art-badge img { animation: none; } }
 
 /* ─── Team photo galleries ──────────────────────────────── */
 .photo-strip { margin-top: 2.5rem; }
@@ -2019,3 +2017,28 @@ body.lightbox-open { overflow: hidden; }
 }
 .photo-grid img:hover { transform: translateY(-3px); border-color: var(--accent); }
 @media (max-width: 560px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* ─── Zoom affordance: magnifier button on clickable photos ─── */
+.zoom-wrap { position: relative; display: block; }
+.project-card-img > .zoom-wrap, .flagship-img-wrap > .zoom-wrap { height: 100%; }
+.zoom-badge {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  width: 36px; height: 36px; border-radius: 50%;
+  display: grid; place-items: center; pointer-events: none;
+  background: rgba(10,10,10,0.62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  border: 1px solid rgba(212,175,81,0.6); color: #D4AF51;
+  box-shadow: 0 6px 16px -6px rgba(0,0,0,0.6);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.zoom-badge svg { width: 18px; height: 18px; }
+.photo-grid .zoom-badge { top: 7px; right: 7px; width: 28px; height: 28px; }
+.photo-grid .zoom-badge svg { width: 14px; height: 14px; }
+@media (hover: hover) {
+  .zoom-badge { opacity: 0; transform: scale(0.8); }
+  .zoom-wrap:hover .zoom-badge, .zoom-wrap:focus-within .zoom-badge { opacity: 1; transform: scale(1); }
+}
+.lightbox-extra { display: none !important; }
+
+/* Hero: balance the space above and below the content (a touch less on top so it reads as centered) */
+.hero { padding-top: 56px; padding-bottom: 80px; }
+@media (max-width: 640px) { .hero { padding-top: 40px; padding-bottom: 56px; } }
