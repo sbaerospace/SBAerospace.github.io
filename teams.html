@@ -31,8 +31,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
-  <link rel="stylesheet" href="style.css?v=4.6" />
-  <script src="main.js?v=4.6" defer></script>
+  <link rel="stylesheet" href="style.css?v=4.8" />
+  <script src="main.js?v=4.8" defer></script>
 </head>
 
 <body>
@@ -146,33 +146,116 @@
                 <p class="team-status">Two teams this year. Team A is our returning team, and Team B came out of the summer tryouts.</p>
                 <p>The American Rocketry Challenge is a national student rocketry contest run by the Aerospace Industries Association and the National Association of Rocketry. Every team builds a rocket that has to carry a raw egg to a set altitude, stay up for a set amount of time, and land without cracking the egg. Scores are based on how close you get, so lower is better.</p>
                 <p>Competing as South Brunswick Aerospace Club, the nonprofit, our teams made the National Finals in The Plains, Virginia, in 2024, 2025, and 2026, and one of those teams placed 50th of the 100 finalists. For the 2025-26 season the team designed an airbrake system with its own flight code, Rocket++. This year's build was on the pad at our World Space Week launch in October 2026.</p>
-                <div class="team-members team-split">
-                  <div>
-                    <h3>Team A</h3>
-                    <ul class="member-list">
-                      <li>Zafir Shamsi</li>
-                      <li>Samuel Asefa</li>
-                      <li>Atharva Vignesh</li>
-                      <li>Pranav Yogeswaran</li>
-                      <li>Krish Saravanakumar</li>
-                      <li>Pranav Gentela</li>
-                      <li>Kunsh Mittal</li>
-                      <li>Prabhav Kongara</li>
-                      <li>Yug Dhami</li>
-                      <li>Krishna Iyer</li>
-                    </ul>
+                <div class="roster" data-roster>
+                  <div class="roster-head">
+                    <h3>Roster</h3>
+                    <div class="roster-tabs" role="tablist" aria-label="Season">
+                      <button class="roster-tab active" type="button" role="tab" aria-selected="true" aria-controls="arc-2026-27" data-year="2026-27">2026-27</button>
+                      <button class="roster-tab" type="button" role="tab" aria-selected="false" aria-controls="arc-2025-26" data-year="2025-26">2025-26</button>
+                      <button class="roster-tab" type="button" role="tab" aria-selected="false" aria-controls="arc-2024-25" data-year="2024-25">2024-25</button>
+                      <button class="roster-tab" type="button" role="tab" aria-selected="false" aria-controls="arc-2023-24" data-year="2023-24">2023-24</button>
+                    </div>
                   </div>
-                  <div>
-                    <h3>Team B members so far</h3>
-                    <ul class="member-list">
-                      <li>Mridhula Velayutha</li>
-                      <li>Kalp Doshi</li>
-                      <li>Lasindu Gunasekara</li>
-                    </ul>
+                  <div class="roster-year" id="arc-2026-27" data-year="2026-27" role="tabpanel">
+                    <div class="roster-groups">
+                      <div class="roster-group">
+                        <h4>Team A</h4>
+                        <ul class="member-list">
+                          <li>Samuel Asefa</li>
+                          <li>Yug Dhami</li>
+                          <li>Pranav Gentela</li>
+                          <li>Krishna Iyer</li>
+                          <li>Prabhav Kongara</li>
+                          <li>Kunsh Mittal</li>
+                          <li>Krish Saravanakumar</li>
+                          <li>Zafir Shamsi</li>
+                          <li>Atharva Vignesh</li>
+                          <li>Pranav Yogeswaran</li>
+                        </ul>
+                      </div>
+                      <div class="roster-group">
+                        <h4>Team B (so far)</h4>
+                        <p class="roster-sub">Co-captains: Kunsh Mittal and Prabhav Kongara</p>
+                        <ul class="member-list">
+                          <li>Kalp Doshi</li>
+                          <li>Lasindu Gunasekara</li>
+                          <li>Mridhula Velayutha</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="roster-year" id="arc-2025-26" data-year="2025-26" role="tabpanel">
+                    <p class="roster-note">Team B made the 2026 National Finals, one of 100 teams picked from 1,107 entries and one of six from New Jersey.</p>
+                    <div class="roster-groups">
+                      <div class="roster-group">
+                        <h4>Team A</h4>
+                        <p class="roster-sub">Captain: Zafir Shamsi</p>
+                        <ul class="member-list">
+                          <li>Zafir Shamsi</li>
+                          <li>Samuel Asefa</li>
+                          <li>Pranav Gentela</li>
+                          <li>Prabhav Kongara</li>
+                          <li>Aarush Latti</li>
+                          <li>Kunsh Mittal</li>
+                          <li>Krish Saravanakumar</li>
+                          <li>Atharva Vignesh</li>
+                          <li>Pranav Yogeswaran</li>
+                        </ul>
+                      </div>
+                      <div class="roster-group">
+                        <h4>Team B</h4>
+                        <ul class="member-list">
+                          <li>Vivek Banker</li>
+                          <li>Ritwik Desai</li>
+                          <li>Yug Dhami</li>
+                          <li>Alin Jain</li>
+                          <li>Braiden Martin</li>
+                          <li>Indrajith Vinod Nambiar</li>
+                          <li>Saahith Paruchuri</li>
+                          <li>Eshaan Revankar</li>
+                          <li>Ryan Varghese</li>
+                          <li>Pranavkirthik Vijayakumaar</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="roster-year" id="arc-2024-25" data-year="2024-25" role="tabpanel">
+                    <p class="roster-note">Made the 2025 National Finals in The Plains, Virginia.</p>
+                    <div class="roster-groups single">
+                      <div class="roster-group">
+                        <h4>Team</h4>
+                        <ul class="member-list">
+                          <li>Samuel Asefa</li>
+                          <li>Vivek Banker</li>
+                          <li>Alin Jain</li>
+                          <li>Havish Kolavennu</li>
+                          <li>Aarush Modali</li>
+                          <li>Aman Pullatikarti</li>
+                          <li>Zafir Shamsi</li>
+                          <li>Pranav Yogeswaran</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="roster-year" id="arc-2023-24" data-year="2023-24" role="tabpanel">
+                    <p class="roster-note">Made the 2024 National Finals in The Plains, Virginia, our first trip.</p>
+                    <div class="roster-groups single">
+                      <div class="roster-group">
+                        <h4>Team</h4>
+                        <ul class="member-list">
+                          <li>Havish Kolavennu</li>
+                          <li>Aarush Modali</li>
+                          <li>Aman Pullatikarti</li>
+                          <li>Zafir Shamsi</li>
+                          <li>Shyam Srikant</li>
+                          <li>Kevin Varghese</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <dl class="team-facts">
-                  <div class="team-fact"><dt>Co-captains</dt><dd>Kunsh Mittal and Prabhav Kongara</dd></div>
+                  <div class="team-fact"><dt>Co-captains (2026-27)</dt><dd>Kunsh Mittal and Prabhav Kongara</dd></div>
                   <div class="team-fact"><dt>Skills used</dt><dd>Rocket design, OpenRocket simulation, CAD, electronics</dd></div>
                   <div class="team-fact"><dt>Past results</dt><dd>National Finals in 2024, 2025, and 2026</dd></div>
                 </dl>
@@ -206,20 +289,53 @@
                 <h2 class="section-title" id="techrise-title">NASA TechRise</h2>
                 <p class="team-status">Returning team. It's close to full.</p>
                 <p>In NASA's TechRise Student Challenge, students design an experiment that rides along on a high-altitude balloon or a suborbital rocket flight.</p>
-                <p>Our team was named a 2026 Student Challenge winner for its NDVI payload, which measures visible and near-infrared light to map vegetation. The prototype records World View balloon telemetry and its own sensor readings to an SD card once a second.</p>
-              <div class="team-members">
-                <h3>Members so far</h3>
-                <ul class="member-list">
-                  <li>Aryan Yerra</li>
-                  <li>Sanjay Murali</li>
-                  <li>Aditya Agarwal</li>
-                  <li>Ishan Seeri</li>
-                  <li>Adriaan Das</li>
-                  <li>Darsh Savajiyani</li>
-                </ul>
+                <p>Our team won the 2025-26 Student Challenge in January 2026 with a proposal called NDVI Mapping via Machine Learning, which came with $1,500 and mentorship from NASA engineers. The payload measures visible and near-infrared light to map vegetation. The prototype records World View balloon telemetry and its own sensor readings to an SD card once a second.</p>
+              <div class="roster" data-roster>
+                <div class="roster-head">
+                  <h3>Roster</h3>
+                  <div class="roster-tabs" role="tablist" aria-label="Season">
+                    <button class="roster-tab active" type="button" role="tab" aria-selected="true" aria-controls="techrise-2026-27" data-year="2026-27">2026-27</button>
+                    <button class="roster-tab" type="button" role="tab" aria-selected="false" aria-controls="techrise-2025-26" data-year="2025-26">2025-26</button>
+                  </div>
+                </div>
+                <div class="roster-year" id="techrise-2026-27" data-year="2026-27" role="tabpanel">
+                  <div class="roster-groups single">
+                    <div class="roster-group">
+                      <h4>Members so far</h4>
+                      <p class="roster-sub">Captain: Pranav Yogeswaran</p>
+                      <ul class="member-list">
+                        <li>Aditya Agarwal</li>
+                        <li>Adriaan Das</li>
+                        <li>Sanjay Murali</li>
+                        <li>Darsh Savajiyani</li>
+                        <li>Ishan Seeri</li>
+                        <li>Aryan Yerra</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="roster-year" id="techrise-2025-26" data-year="2025-26" role="tabpanel">
+                  <p class="roster-note">Won the 2025-26 Student Challenge in January 2026 with the proposal NDVI Mapping via Machine Learning.</p>
+                  <div class="roster-groups single">
+                    <div class="roster-group">
+                      <h4>Team</h4>
+                      <p class="roster-sub">Advisor: Ms. Chishti</p>
+                      <ul class="member-list">
+                        <li>Samuel Asefa</li>
+                        <li>Pranav Gentela</li>
+                        <li>Prabhav Kongara</li>
+                        <li>Kunsh Mittal</li>
+                        <li>Krish Saravanakumar</li>
+                        <li>Zafir Shamsi</li>
+                        <li>Atharva Vignesh</li>
+                        <li>Pranav Yogeswaran</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
                 <dl class="team-facts">
-                  <div class="team-fact"><dt>Captain</dt><dd>Pranav Yogeswaran</dd></div>
+                  <div class="team-fact"><dt>Captain (2026-27)</dt><dd>Pranav Yogeswaran</dd></div>
                   <div class="team-fact"><dt>Skills used</dt><dd>4. Electronics, 9. Research</dd></div>
                   <div class="team-fact"><dt>Past results</dt><dd>2026 Student Challenge winner</dd></div>
                 </dl>
@@ -257,22 +373,30 @@
               <p class="team-status">Two teams this year. Neither has competed yet.</p>
               <p>Genes in Space is a contest where students propose a DNA or molecular biology experiment that could be run on the International Space Station.</p>
               <p>We have two separate Genes in Space teams this year. Both came together through this year's tryouts.</p>
-              <div class="team-members team-split">
-                <div>
-                  <h3>Team 1 members so far</h3>
-                  <ul class="member-list">
-                    <li>Rayan Hossain</li>
-                  </ul>
+              <div class="roster" data-roster>
+                <div class="roster-head">
+                  <h3>Roster</h3>
+                  <span class="roster-season">2026-27</span>
                 </div>
-                <div>
-                  <h3>Team 2 members so far</h3>
-                  <ul class="member-list">
-                    <li>Anika Panchal</li>
-                  </ul>
+                <div class="roster-year" id="genes-in-space-2026-27" data-year="2026-27">
+                  <div class="roster-groups">
+                    <div class="roster-group">
+                      <h4>Team 1 (so far)</h4>
+                      <ul class="member-list">
+                        <li>Rayan Hossain</li>
+                      </ul>
+                    </div>
+                    <div class="roster-group">
+                      <h4>Team 2 (so far)</h4>
+                      <ul class="member-list">
+                        <li>Anika Panchal</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
               <dl class="team-facts">
-                <div class="team-fact"><dt>Captains</dt><dd>Pranav Yogeswaran and Pranav Gentela</dd></div>
+                <div class="team-fact"><dt>Captains (2026-27)</dt><dd>Pranav Yogeswaran and Pranav Gentela</dd></div>
                 <div class="team-fact"><dt>Skills used</dt><dd>7. Biology, 9. Research</dd></div>
                 <div class="team-fact"><dt>Past results</dt><dd>None yet</dd></div>
               </dl>
@@ -290,7 +414,7 @@
               <p>The Aviation Design Challenge is run by the General Aviation Manufacturers Association (GAMA). High school teams use flight simulation to design and test changes to an aircraft.</p>
               <p>Our team came together through this year's tryouts.</p>
               <dl class="team-facts">
-                <div class="team-fact"><dt>Captain</dt><dd>Krish Saravanakumar</dd></div>
+                <div class="team-fact"><dt>Captain (2026-27)</dt><dd>Krish Saravanakumar</dd></div>
                 <div class="team-fact"><dt>Skills used</dt><dd>6. Physics, 2. Simulation, 9. Research</dd></div>
                 <div class="team-fact"><dt>Past results</dt><dd>None yet</dd></div>
               </dl>
@@ -307,16 +431,26 @@
               <p class="team-status">Forming this year. It hasn't competed yet.</p>
               <p>In Cubes in Space, students design an experiment small enough to fit inside a cube a few centimeters wide. Selected experiments fly on a NASA sounding rocket or a high-altitude balloon.</p>
               <p>Our team came together through this year's tryouts.</p>
-              <div class="team-members">
-                <h3>Members so far</h3>
-                <ul class="member-list">
-                  <li>Durgaganesh Yallabandi</li>
-                  <li>Kallempudi Bhavesh</li>
-                  <li>Nischal Gajendra</li>
-                </ul>
+              <div class="roster" data-roster>
+                <div class="roster-head">
+                  <h3>Roster</h3>
+                  <span class="roster-season">2026-27</span>
+                </div>
+                <div class="roster-year" id="cubes-in-space-2026-27" data-year="2026-27">
+                  <div class="roster-groups single">
+                    <div class="roster-group">
+                      <h4>Members so far</h4>
+                      <ul class="member-list">
+                        <li>Kallempudi Bhavesh</li>
+                        <li>Nischal Gajendra</li>
+                        <li>Durgaganesh Yallabandi</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
               <dl class="team-facts">
-                <div class="team-fact"><dt>Captain</dt><dd>Krish Saravanakumar</dd></div>
+                <div class="team-fact"><dt>Captain (2026-27)</dt><dd>Krish Saravanakumar</dd></div>
                 <div class="team-fact"><dt>Skills used</dt><dd>4. Electronics, 9. Research, 3. Computer Science</dd></div>
                 <div class="team-fact"><dt>Past results</dt><dd>None yet</dd></div>
               </dl>
@@ -333,18 +467,28 @@
               <p class="team-status">Forming this year, and it's close to full. It hasn't competed yet.</p>
               <p>In the REC Foundation's Aerial Drone Competition, teams fly and program drones to complete piloted and autonomous challenges.</p>
               <p>Our team came together through this year's tryouts.</p>
-              <div class="team-members">
-                <h3>Members so far</h3>
-                <ul class="member-list">
-                  <li>Kunsh Mittal</li>
-                  <li>Rohan Kumar</li>
-                  <li>Prabhav Kongara</li>
-                  <li>Adhith Kumar</li>
-                  <li>Vedant Navale</li>
-                </ul>
+              <div class="roster" data-roster>
+                <div class="roster-head">
+                  <h3>Roster</h3>
+                  <span class="roster-season">2026-27</span>
+                </div>
+                <div class="roster-year" id="aerial-drone-2026-27" data-year="2026-27">
+                  <div class="roster-groups single">
+                    <div class="roster-group">
+                      <h4>Members so far</h4>
+                      <ul class="member-list">
+                        <li>Prabhav Kongara</li>
+                        <li>Adhith Kumar</li>
+                        <li>Rohan Kumar</li>
+                        <li>Kunsh Mittal</li>
+                        <li>Vedant Navale</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
               <dl class="team-facts">
-                <div class="team-fact"><dt>Captain</dt><dd>Pranav Gentela</dd></div>
+                <div class="team-fact"><dt>Captain (2026-27)</dt><dd>Pranav Gentela</dd></div>
                 <div class="team-fact"><dt>Skills used</dt><dd>3. Computer Science, 5. Mechanical, 6. Physics, 1. CAD</dd></div>
                 <div class="team-fact"><dt>Past results</dt><dd>None yet</dd></div>
               </dl>

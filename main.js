@@ -423,6 +423,32 @@ document.addEventListener('DOMContentLoaded', function () {
     showTeam(location.hash.slice(1), !!location.hash);
   }
 
+  // ─── TEAM ROSTERS: season switcher ─────────────────────────
+  document.querySelectorAll('[data-roster]').forEach(roster => {
+    const tabs = [...roster.querySelectorAll('.roster-tab')];
+    const years = [...roster.querySelectorAll('.roster-year')];
+    if (!tabs.length) return;
+    const show = (year) => {
+      tabs.forEach(t => {
+        const on = t.dataset.year === year;
+        t.classList.toggle('active', on);
+        t.setAttribute('aria-selected', on);
+        t.tabIndex = on ? 0 : -1;
+      });
+      years.forEach(panel => { panel.hidden = panel.dataset.year !== year; });
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => show(t.dataset.year));
+      t.addEventListener('keydown', e => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        show(next.dataset.year);
+        next.focus();
+      });
+    });
+    show(tabs[0].dataset.year);
+  });
+
   // ─── PHOTO VIEWER ──────────────────────────────────────────
   // Any <img data-lightbox="group"> opens full screen; arrows step through images in the same group
   // (one group per project or photo box). Images inside a hidden .lightbox-extra only appear in the viewer.

@@ -48,6 +48,9 @@
     <image:image>
       <image:loc>https://sbaerospace.vercel.app/assets/photos/openrocket-arc-2027-2000.webp</image:loc>
     </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2026-finals-team-964.webp</image:loc>
+    </image:image>
   </url>
   <url>
     <loc>https://sbaerospace.vercel.app/club.html</loc>
