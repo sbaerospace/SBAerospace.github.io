@@ -2042,3 +2042,9 @@ body.lightbox-open { overflow: hidden; }
 /* Hero: balance the space above and below the content (a touch less on top so it reads as centered) */
 .hero { padding-top: 56px; padding-bottom: 80px; }
 @media (max-width: 640px) { .hero { padding-top: 40px; padding-bottom: 56px; } }
+
+/* Footnote for results earned as the nonprofit */
+.fn { color: var(--accent); font-weight: 700; margin-left: 1px; }
+.footnote { margin-top: 1rem; font-size: 0.82rem; line-height: 1.55; color: var(--text-muted); }
+.footnote a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; margin-left: 0.25rem; }
+.stat dd .fn { font-size: 0.42em; vertical-align: top; position: relative; top: 0.2em; margin-left: 2px; }
