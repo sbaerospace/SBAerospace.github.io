@@ -423,6 +423,96 @@ document.addEventListener('DOMContentLoaded', function () {
     showTeam(location.hash.slice(1), !!location.hash);
   }
 
+  // ─── PHOTO VIEWER ──────────────────────────────────────────
+  // Any <img data-lightbox="group"> opens full screen; arrows step through images in the same group.
+  // data-full points to a larger file when there is one; the caption comes from data-caption or alt.
+  const lbImages = [...document.querySelectorAll('img[data-lightbox]')];
+  if (lbImages.length) {
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Photo viewer');
+    box.hidden = true;
+    box.innerHTML = `
+      <button class="lightbox-btn lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+      <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo">&#8249;</button>
+      <figure class="lightbox-figure">
+        <img class="lightbox-img" alt="" />
+        <figcaption class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></figcaption>
+      </figure>
+      <button class="lightbox-btn lightbox-next" type="button" aria-label="Next photo">&#8250;</button>`;
+    document.body.appendChild(box);
+    const lbImg = box.querySelector('.lightbox-img');
+    const lbText = box.querySelector('.lightbox-text');
+    const lbCount = box.querySelector('.lightbox-count');
+    const prevBtn = box.querySelector('.lightbox-prev');
+    const nextBtn = box.querySelector('.lightbox-next');
+    let group = [], index = 0, opener = null;
+
+    const show = (i) => {
+      index = (i + group.length) % group.length;
+      const img = group[index];
+      lbImg.src = img.dataset.full || img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbText.textContent = img.dataset.caption || img.alt;
+      lbCount.textContent = group.length > 1 ? `${index + 1} / ${group.length}` : '';
+      prevBtn.hidden = nextBtn.hidden = group.length < 2;
+    };
+    const open = (img) => {
+      group = lbImages.filter(el => el.dataset.lightbox === img.dataset.lightbox && el.offsetParent !== null);
+      if (!group.includes(img)) group = [img];
+      opener = img;
+      show(group.indexOf(img));
+      box.hidden = false;
+      document.body.classList.add('lightbox-open');
+      box.querySelector('.lightbox-close').focus();
+    };
+    const close = () => {
+      box.hidden = true;
+      document.body.classList.remove('lightbox-open');
+      lbImg.removeAttribute('src');
+      if (opener) opener.focus();
+    };
+
+    lbImages.forEach(img => {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'View larger: ' + img.alt);
+      img.classList.add('zoomable');
+      img.addEventListener('click', () => open(img));
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+      });
+    });
+    box.querySelector('.lightbox-close').addEventListener('click', close);
+    prevBtn.addEventListener('click', () => show(index - 1));
+    nextBtn.addEventListener('click', () => show(index + 1));
+    box.addEventListener('click', e => { if (e.target === box) close(); });
+    document.addEventListener('keydown', e => {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft' && group.length > 1) show(index - 1);
+      else if (e.key === 'ArrowRight' && group.length > 1) show(index + 1);
+      else if (e.key === 'Tab') {
+        // keep focus inside the viewer
+        const focusables = [...box.querySelectorAll('button:not([hidden])')];
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    // swipe left/right on touch screens
+    let touchX = null;
+    box.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', e => {
+      if (touchX === null || group.length < 2) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+      touchX = null;
+    });
+  }
+
   // ─── HERO SLIDESHOW ────────────────────────────────────────
   const heroSlideshow = document.getElementById('heroSlideshow');
   if (heroSlideshow) {

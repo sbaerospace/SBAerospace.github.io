@@ -8,7 +8,7 @@
       <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2025-finals-launch-1200.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-team-certificate-1600.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2024-finals-launch-1000.webp</image:loc>
@@ -21,7 +21,7 @@
     <loc>https://sbaerospace.vercel.app/about.html</loc>
     <lastmod>2026-10-17</lastmod>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-team-certificate-1600.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -34,7 +34,7 @@
       <image:loc>https://sbaerospace.vercel.app/assets/photos/rocketplus-code-1000.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/ndvi-payload-prototype-1000.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/ndvi-payload-prototype-1600.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2027-build-pad-480.webp</image:loc>
@@ -46,7 +46,7 @@
       <image:loc>https://sbaerospace.vercel.app/assets/photos/circuitspace-1200.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/openrocket-sim-1200.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/openrocket-arc-2027-2000.webp</image:loc>
     </image:image>
   </url>
   <url>
@@ -60,7 +60,19 @@
       <image:loc>https://sbaerospace.vercel.app/assets/photos/arc-2025-finals-launch-1200.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-2026-team-1200.webp</image:loc>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-team-certificate-1600.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-weekly-meeting-1600.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-payload-check-1600.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-wiring-1600.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://sbaerospace.vercel.app/assets/photos/techrise-build-session-1600.webp</image:loc>
     </image:image>
   </url>
   <url>

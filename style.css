@@ -132,7 +132,7 @@ header {
   font-family: var(--font-head); font-weight: 800; font-size: 1.1rem;
   color: var(--nav-text);
 }
-.logo img { width: 32px; height: 32px; object-fit: contain; }
+.logo img { width: 40px; height: 40px; object-fit: contain; }
 
 .nav-links {
   display: flex; align-items: center; gap: 1.75rem;
@@ -1966,3 +1966,56 @@ h1, h2, h3, .hero-title, .section-title, .logo, .cta-banner h2 { font-family: va
 }
 [data-theme="dark"] .horizon { background: radial-gradient(ellipse 55% 100% at 50% 100%, rgba(212,175,81,0.30), transparent 70%); }
 @media (max-width: 640px) { .announce-dot { display: none; } }
+
+/* ─── Photo viewer ──────────────────────────────────────── */
+img.zoomable { cursor: zoom-in; }
+img.zoomable:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 1000;
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  padding: 3.5rem 4.5rem; background: rgba(6, 6, 7, 0.97); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  animation: lb-in 0.2s ease;
+}
+.lightbox[hidden] { display: none; }
+@keyframes lb-in { from { opacity: 0; } }
+body.lightbox-open { overflow: hidden; }
+.lightbox-figure { margin: 0; max-width: 100%; max-height: 100%; display: flex; flex-direction: column; align-items: center; gap: 0.9rem; }
+.lightbox-img { max-width: min(1400px, 100%); max-height: calc(100vh - 9rem); width: auto; height: auto; object-fit: contain; border-radius: var(--radius-md); background: #111; }
+.lightbox-caption { display: flex; gap: 1.25rem; align-items: baseline; justify-content: center; flex-wrap: wrap; color: rgba(245,240,232,0.85); font-size: 0.9rem; text-align: center; max-width: 760px; }
+.lightbox-count { color: var(--accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; white-space: nowrap; }
+.lightbox-btn {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+  color: #F5F0E8; font-size: 1.9rem; line-height: 1; transition: background 0.2s, color 0.2s;
+}
+.lightbox-btn:hover { background: rgba(212,175,81,0.22); color: #fff; }
+.lightbox-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.lightbox-btn[hidden] { display: none; }
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; font-size: 1.6rem; }
+@media (max-width: 640px) {
+  .lightbox { padding: 3.75rem 0.75rem 1.25rem; }
+  .lightbox-prev, .lightbox-next { position: absolute; bottom: 1rem; width: 42px; height: 42px; }
+  .lightbox-prev { left: 1rem; } .lightbox-next { right: 1rem; }
+  .lightbox-img { max-height: calc(100vh - 11rem); }
+  .lightbox-caption { padding: 0 3.5rem; }
+}
+
+/* ─── Club badge ────────────────────────────────────────── */
+.hero-badge { width: 96px; height: 96px; margin-bottom: 1.25rem; filter: drop-shadow(0 6px 18px rgba(212,175,81,0.25)); }
+.footer-badge { width: 64px; height: 64px; margin-bottom: 1rem; opacity: 0.92; }
+.page-art-badge img { display: block; width: 100%; height: auto; animation: drift 7s ease-in-out infinite; filter: drop-shadow(0 8px 24px rgba(212,175,81,0.22)); }
+@media (max-width: 640px) { .hero-badge { width: 72px; height: 72px; } }
+@media (prefers-reduced-motion: reduce) { .page-art-badge img { animation: none; } }
+
+/* ─── Team photo galleries ──────────────────────────────── */
+.photo-strip { margin-top: 2.5rem; }
+.photo-strip h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.9rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; }
+.photo-grid img {
+  width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; display: block;
+  border-radius: var(--radius-md); border: 1px solid var(--border);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.photo-grid img:hover { transform: translateY(-3px); border-color: var(--accent); }
+@media (max-width: 560px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
