@@ -40,7 +40,8 @@ function applyTheme(theme) {
   banner.id = 'announceBanner';
   banner.innerHTML = `
     <span class="announce-dot" aria-hidden="true"></span>
-    <span>Next general meeting: Wednesday, Oct 21, 2:30 to 4:00 PM. All SBHS students are welcome.</span>
+    <span>Next general meeting: <span data-meeting-date="short">Wednesday</span>, 2:30 to 4:00 PM.
+      <span class="announce-countdown" data-meeting-countdown><span class="announce-timer">Starts in <span data-meeting-left></span></span><span class="countdown-live">Happening now.</span></span></span>
     <a href="club.html#join">How to join →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
@@ -551,6 +552,64 @@ document.addEventListener('DOMContentLoaded', function () {
       if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
       touchX = null;
     });
+  }
+
+  // ─── NEXT GENERAL MEETING ──────────────────────────────────
+  // General meetings are the third Wednesday of every month, 2:30 to 4:00 PM Eastern,
+  // so the date and countdown work themselves out instead of being typed in each month.
+  const meetingDates = document.querySelectorAll('[data-meeting-date]');
+  const meetingCountdowns = document.querySelectorAll('[data-meeting-countdown]');
+  if (meetingDates.length || meetingCountdowns.length) {
+    const ZONE = 'America/New_York';
+    const easternParts = date => Object.fromEntries(new Intl.DateTimeFormat('en-US', {
+      timeZone: ZONE, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric'
+    }).formatToParts(date).map(p => [p.type, Number(p.value)]));
+    // A wall-clock time in New Jersey as a real Date, whatever time zone the visitor is in
+    const easternTime = (y, m, d, h, min) => {
+      const guess = Date.UTC(y, m, d, h, min);
+      const p = easternParts(new Date(guess));
+      const offset = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute) - guess;
+      return new Date(guess - offset);
+    };
+    const thirdWednesday = (y, m) => 1 + (3 - new Date(Date.UTC(y, m, 1)).getUTCDay() + 7) % 7 + 14;
+    const nextMeeting = now => {
+      const today = easternParts(now);
+      let y = today.year, m = today.month - 1;
+      for (;;) {
+        const day = thirdWednesday(y, m);
+        const end = easternTime(y, m, day, 16, 0);
+        if (now < end) return { start: easternTime(y, m, day, 14, 30), end };
+        if (++m > 11) { m = 0; y++; }
+      }
+    };
+    const pad = n => String(n).padStart(2, '0');
+    let meeting = nextMeeting(new Date());
+
+    const tick = () => {
+      const now = new Date();
+      if (now >= meeting.end) meeting = nextMeeting(now);
+      const month = el => el.dataset.meetingDate === 'short' ? 'short' : 'long';
+      meetingDates.forEach(el => {
+        const label = meeting.start.toLocaleDateString('en-US', { timeZone: ZONE, weekday: 'long', month: month(el), day: 'numeric' });
+        if (el.textContent !== label) el.textContent = label;
+      });
+
+      const left = Math.max(0, Math.floor((meeting.start - now) / 1000));
+      const units = {
+        days: Math.floor(left / 86400),
+        hours: Math.floor(left % 86400 / 3600),
+        minutes: Math.floor(left % 3600 / 60),
+        seconds: left % 60
+      };
+      const compact = (units.days ? units.days + 'd ' : '') + `${pad(units.hours)}h ${pad(units.minutes)}m ${pad(units.seconds)}s`;
+      meetingCountdowns.forEach(box => {
+        box.classList.toggle('is-live', now >= meeting.start);
+        box.querySelectorAll('[data-unit]').forEach(el => { el.textContent = pad(units[el.dataset.unit]); });
+        box.querySelectorAll('[data-meeting-left]').forEach(el => { el.textContent = compact; });
+      });
+    };
+    tick();
+    if (meetingCountdowns.length) setInterval(tick, 1000);
   }
 
   // ─── HERO SLIDESHOW ────────────────────────────────────────

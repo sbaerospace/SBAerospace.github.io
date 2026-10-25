@@ -633,6 +633,20 @@ header {
   object-fit: cover;
   display: block;
 }
+/* Photo credit for pictures we didn't take, sitting in the bottom corner of the photo */
+.photo-credit {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.88);
+  background: rgba(14, 13, 10, 0.62);
+  border-radius: 999px;
+  pointer-events: none;
+}
+.figcaption-credit { display: block; margin-top: 0.2rem; font-size: 0.74rem; color: var(--text-muted); }
 .hero-slideshow-controls {
   position: absolute;
   top: 1rem;
@@ -1696,11 +1710,6 @@ footer {
 }
 
 /* ─── CLUB PAGE: BOARD ───────────────────────────────────── */
-.board-officers, .board-members {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
-  max-width: 900px; margin: 0 auto;
-}
-.board-officers { margin-bottom: 1.25rem; }
 .board-card {
   background: var(--bg-card); border: 1px solid var(--border);
   border-radius: var(--radius-md); padding: 1.5rem 1.25rem; text-align: center;
@@ -1711,11 +1720,62 @@ footer {
   margin-top: 0.3rem; font-size: 0.75rem; font-weight: 700; color: var(--accent);
   text-transform: uppercase; letter-spacing: 0.05em;
 }
+.board-card-lead { padding: 2rem 1.75rem; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); }
+.board-card-lead .team-initials { width: 64px; height: 64px; font-size: 1.2rem; }
+.board-card-lead h3 { font-size: 1.4rem; }
+.board-card-lead .board-role { font-size: 0.82rem; }
+.board-card-lead .board-teams { font-size: 0.88rem; line-height: 1.55; margin-top: 0.6rem; }
+
+/* Org chart: one tier per level. A spine drops from the tier above, a bar
+   spans the centers of the first and last card, and short stubs reach each card. */
+.org-chart { --stub: 14px; --drop: 4.25rem; --gap: 1rem; --org-line: rgba(201,168,76,0.6); max-width: 1060px; margin: 0 auto; }
+.org-tier { position: relative; }
+.org-tier + .org-tier { padding-top: var(--drop); }
+.org-tier + .org-tier::before {
+  content: ""; position: absolute; left: 50%; top: var(--stub);
+  height: calc(var(--drop) - 2 * var(--stub)); border-left: 1px solid var(--org-line);
+}
+.org-tier-label {
+  position: absolute; left: 50%; top: calc(var(--drop) / 2); transform: translate(-50%, -50%); z-index: 1;
+  padding: 0.2rem 0.75rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  white-space: nowrap; color: var(--text-muted); background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: var(--radius-pill);
+}
+.org-row {
+  position: relative; display: grid; grid-template-columns: repeat(var(--cols), 1fr);
+  gap: var(--gap); margin: 0 auto;
+}
+.org-row::before, .org-row::after {
+  content: ""; position: absolute; border-top: 1px solid var(--org-line);
+  left: calc((100% - (var(--cols) - 1) * var(--gap)) / (2 * var(--cols)));
+  right: calc((100% - (var(--cols) - 1) * var(--gap)) / (2 * var(--cols)));
+}
+.org-row::before { top: calc(-1 * var(--stub)); }
+.org-row::after { top: calc(100% + var(--stub)); }
+.org-row .board-card { position: relative; }
+.org-row .board-card::before, .org-row .board-card::after {
+  content: ""; position: absolute; left: 50%; height: var(--stub); border-left: 1px solid var(--org-line);
+}
+.org-row .board-card::before { bottom: 100%; }
+.org-row .board-card::after { top: 100%; }
+.org-tier:first-child .org-row::before, .org-tier:first-child .board-card::before,
+.org-tier:last-child .org-row::after, .org-tier:last-child .board-card::after { display: none; }
+.org-row-wide .board-card { padding: 1.4rem 0.85rem; }
+/* Once the captains wrap, bars would point at the wrong cards, so just keep the spine */
+@media (max-width: 900px) {
+  .org-row-wide { display: flex; flex-wrap: wrap; justify-content: center; }
+  .org-row-wide .board-card { flex: 0 1 calc((100% - 2 * var(--gap)) / 3); }
+  .org-row::before, .org-row::after,
+  .org-row .board-card::before, .org-row .board-card::after { display: none; }
+  .org-tier + .org-tier::before { top: 0; height: var(--drop); }
+}
 @media (max-width: 560px) {
-  .board-officers, .board-members { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-  .board-officers .board-card:first-child { grid-column: 1 / -1; }
-  .board-card { padding: 1.1rem 0.75rem; }
+  .org-chart { --gap: 0.75rem; --drop: 3.5rem; }
+  .org-row-wide .board-card { flex-basis: calc((100% - var(--gap)) / 2); }
+  .board-card, .org-row-wide .board-card { padding: 1.1rem 0.75rem; }
   .board-card h3 { font-size: 0.95rem; }
+  .board-card-lead { padding: 1.5rem 1.1rem; }
+  .board-card-lead h3 { font-size: 1.2rem; }
 }
 
 /* Competition table: name links to the team's section on the Teams page */
@@ -1810,7 +1870,29 @@ section[id], #join { scroll-margin-top: 80px; }
 .join-code-row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; margin: 0.25rem 0 0.4rem; }
 .join-step .classroom-code { font-size: 1.45rem; padding: 0.5rem 0.9rem; }
 .join-step .btn { padding: 0.65rem 1.3rem; font-size: 0.9rem; }
-.join-dates li { font-weight: 700; color: var(--text); padding: 0.15rem 0; }
+.meeting-countdown { display: flex; flex-direction: column; gap: 0.5rem; }
+.join-step .meeting-next strong { color: var(--text); }
+.countdown { display: flex; gap: 0.5rem; }
+.countdown div {
+  min-width: 3.4rem; padding: 0.5rem 0.45rem; text-align: center;
+  background: var(--accent-bg); border: 1px solid var(--accent); border-radius: var(--radius-sm);
+}
+.countdown span {
+  display: block; font-family: var(--font-head); font-size: 1.35rem; font-weight: 700;
+  line-height: 1.1; color: var(--text); font-variant-numeric: tabular-nums;
+}
+.countdown small {
+  display: block; margin-top: 0.15rem; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted);
+}
+/* While a meeting is going on, the timers swap for a "happening now" line */
+.countdown-live { display: none; font-weight: 700; }
+.join-step .countdown-live { color: var(--accent); }
+.is-live > .countdown, .is-live > .announce-timer { display: none; }
+.is-live > .countdown-live { display: block; }
+.announce-countdown { margin-left: 0.35rem; }
+.announce-countdown.is-live > .countdown-live { display: inline; color: var(--accent); }
+.announce-timer { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .join-subhead { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; margin: 2.75rem 0 1rem; }
 @media (max-width: 860px) { .join-steps { grid-template-columns: 1fr; } }
 /* The chevron's padding and icon whitespace made the gap after "Teams" look wider than the rest */
