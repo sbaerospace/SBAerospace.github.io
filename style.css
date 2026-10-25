@@ -1730,11 +1730,11 @@ footer {
   margin-top: 0.3rem; font-size: 0.75rem; font-weight: 700; color: var(--role);
   text-transform: uppercase; letter-spacing: 0.05em;
 }
-.board-card-lead { padding: 2rem 1.75rem; box-shadow: 0 0 0 4px var(--accent-bg); }
-.board-card-lead .team-initials { width: 64px; height: 64px; font-size: 1.2rem; }
-.board-card-lead h3 { font-size: 1.4rem; }
-.board-card-lead .board-role { font-size: 0.82rem; }
-.board-card-lead .board-teams { font-size: 0.88rem; line-height: 1.55; margin-top: 0.6rem; }
+.board-card-lead { padding: 1.6rem 1.4rem; box-shadow: 0 0 0 4px var(--accent-bg); }
+.board-card-lead .team-initials { width: 56px; height: 56px; font-size: 1.1rem; }
+.board-card-lead h3 { font-size: 1.25rem; }
+.board-card-lead .board-role { font-size: 0.78rem; }
+.board-card-lead .board-teams { font-size: 0.85rem; line-height: 1.5; margin-top: 0.45rem; }
 
 /* Org chart: one tier per level. A spine drops from the tier above, a bar
    spans the centers of the first and last card, and short stubs reach each card. */
@@ -1784,8 +1784,8 @@ footer {
   .org-row-wide .board-card { flex-basis: calc((100% - var(--gap)) / 2); }
   .board-card, .org-row-wide .board-card { padding: 1.1rem 0.75rem; }
   .board-card h3 { font-size: 0.95rem; }
-  .board-card-lead { padding: 1.5rem 1.1rem; }
-  .board-card-lead h3 { font-size: 1.2rem; }
+  .board-card-lead { padding: 1.3rem 1rem; }
+  .board-card-lead h3 { font-size: 1.1rem; }
 }
 
 /* Competition table: name links to the team's section on the Teams page */
