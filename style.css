@@ -1710,17 +1710,27 @@ footer {
 }
 
 /* ─── CLUB PAGE: BOARD ───────────────────────────────────── */
+/* Each role has its own color for the card border, initials, and title; the president keeps gold */
+:root { --role-vp: #6E7C8E; --role-captain: #3D7BC2; --role-ops: #B0643A; }
+[data-theme="dark"] { --role-vp: #AEB9C6; --role-captain: #6FA4E2; --role-ops: #D98E5F; }
 .board-card {
-  background: var(--bg-card); border: 1px solid var(--border);
+  --role: var(--accent);
+  background: var(--bg-card); border: 1px solid var(--role);
   border-radius: var(--radius-md); padding: 1.5rem 1.25rem; text-align: center;
 }
-.board-card .team-initials { margin: 0 auto 0.9rem; }
+.board-card-vp { --role: var(--role-vp); }
+.board-card-captain { --role: var(--role-captain); }
+.board-card-ops { --role: var(--role-ops); }
+.board-card .team-initials {
+  margin: 0 auto 0.9rem; color: var(--role); border-color: var(--role);
+  background: color-mix(in srgb, var(--role) 12%, transparent);
+}
 .board-card h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; }
 .board-role {
-  margin-top: 0.3rem; font-size: 0.75rem; font-weight: 700; color: var(--accent);
+  margin-top: 0.3rem; font-size: 0.75rem; font-weight: 700; color: var(--role);
   text-transform: uppercase; letter-spacing: 0.05em;
 }
-.board-card-lead { padding: 2rem 1.75rem; border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-bg); }
+.board-card-lead { padding: 2rem 1.75rem; box-shadow: 0 0 0 4px var(--accent-bg); }
 .board-card-lead .team-initials { width: 64px; height: 64px; font-size: 1.2rem; }
 .board-card-lead h3 { font-size: 1.4rem; }
 .board-card-lead .board-role { font-size: 0.82rem; }
