@@ -32,7 +32,7 @@ function applyTheme(theme) {
 
 // ─── ANNOUNCEMENT BANNER ──────────────────────────────────
 (function initBanner() {
-  const BANNER_KEY = 'sba-banner-dismissed-2026-10';
+  const BANNER_KEY = 'sba-banner-dismissed-2026-11';
   if (sessionStorage.getItem(BANNER_KEY)) return;
 
   const banner = document.createElement('div');
@@ -40,7 +40,7 @@ function applyTheme(theme) {
   banner.id = 'announceBanner';
   banner.innerHTML = `
     <span class="announce-dot" aria-hidden="true"></span>
-    <span>Next general meeting: Wednesday, Oct 21, 2:30 to 4:00 PM. All SBHS students are welcome.</span>
+    <span>Next general meeting: Thursday, Nov 19, 2:30 to 4:00 PM. All SBHS students are welcome.</span>
     <a href="club.html#join">How to join →</a>
     <button class="announce-banner-close" aria-label="Dismiss announcement" id="bannerClose">✕</button>
   `;
